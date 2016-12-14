@@ -1,0 +1,213 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+
+$red: #E60000;
+$purple: #B625A4;
+$purple-light: #C829B4;
+$bright-gray: #323A45;
+$alabaster: #F5F5F5;
+$white: #FFFFFF;
+$white-60: rgba(255,255,255,0.6);
+$white-30: rgba(255,255,255,0.3);
+
+$colors: (
+  transparent: transparent,
+  red: $red,
+  purple: $purple,
+  purple-light: $purple-light,
+  bright-gray: $bright-gray,
+  alabaster: $alabaster,
+  white: $white,
+  white-60: $white-60,
+  white-30: $white-30
+);
+
+$align-items: (
+  center: center
+);
+
+$border: (
+  1: (1px solid)
+);
+
+$border-collapse: (
+  collapse: collapse
+);
+
+$border-radius: (
+  3px: 3px
+);
+
+$coordinates: (
+  0: 0
+);
+
+$cursor: (
+  default: default,
+  pointer: pointer
+);
+
+$display: (
+  flex: flex,
+  block: block,
+  inline-block: inline-block
+);
+
+$font-size: (
+  1.1rem: 1.1rem,
+  1.3rem: 1.3rem,
+  3.2rem: 3.2rem
+);
+
+$font-weight: (
+  300: 300,
+  600: 600
+);
+
+$flex-wrap: (
+  wrap: wrap
+);
+
+$height: (
+  24px: 24px,
+  38px: 38px
+);
+
+$justify-content: (
+  center: center
+);
+
+$letter-spacing: (
+  0.1rem: 0.1rem
+);
+
+$line-height: (
+  1.25: 1.25,
+  36px: 36px
+);
+
+$margin: (
+  auto: auto,
+  0-auto: (0 auto),
+  10px: 10px,
+  20px: 20px,
+  40px: 40px
+);
+
+$max-width: (
+  xl: map-get($breakpoints, xl)
+);
+
+$opacity: (
+  0.9: 0.9
+);
+
+$outline: (
+  0: 0
+);
+
+$padding: (
+  5px: 5px,
+  10px: 10px,
+  15px: 15px,
+  20px: 20px,
+  40px: 40px,
+  45px: 45px,
+  60px: 60px
+);
+
+$position: (
+  fixed: fixed
+);
+
+$text-align: (
+  left: left,
+  right: right
+);
+
+$text-decoration: (
+  none: none
+);
+
+$text-transform: (
+  uppercase: uppercase
+);
+
+$transition: (
+  all: (all .15s ease-in)
+);
+
+$vertical-align: (
+  middle: middle
+);
+
+$width: (
+  100%: 100%,
+  50%: 50%,
+  24px: 24px,
+  650px: 650px
+);
+
+$dictionary: (
+  (ai,                                align-items,                            $align-items,                 null,                             (xs, sm, md, lg, xl)),
+  (bgc,                               background-color,                       $colors,                      null,                             (xs, sm, md, lg, xl)),
+  (bgc-hover,                         background-color,                       $colors,                      ":hover",                         (xs, sm, md, lg, xl)),
+  (bgc-disabled,                      background-color,                       $colors,                      "[disabled]",                     (xs, sm, md, lg, xl)),
+  (b,                                 border,                                 $border,                      null,                             (xs, sm, md, lg, xl)),
+  (bb,                                border-bottom,                          $border,                      null,                             (xs, sm, md, lg, xl)),
+  (br,                                border-right,                           $border,                      null,                             (xs, sm, md, lg, xl)),
+  (bra,                               border-radius,                          $border-radius,               null,                             (xs, sm, md, lg, xl)),
+  (bt,                                border-top,                             $border,                      null,                             (xs, sm, md, lg, xl)),
+  (bc,                                border-color,                           $colors,                      null,                             (xs, sm, md, lg, xl)),
+  (bc-hover,                          border-color,                           $colors,                      ":hover",                         (xs, sm, md, lg, xl)),
+  (bc-focus,                          border-color,                           $colors,                      ":focus",                         (xs, sm, md, lg, xl)),
+  (bc-disabled,                       border-color,                           $colors,                      "[disabled]",                     (xs, sm, md, lg, xl)),
+  (bco,                               border-collapse,                        $border-collapse,             null,                             (xs, sm, md, lg, xl)),
+  (bottom,                            bottom,                                 $coordinates,                 null,                             (xs, sm, md, lg, xl)),
+  (c,                                 color,                                  $colors,                      null,                             (xs, sm, md, lg, xl)),
+  (c-hover,                           color,                                  $colors,                      ":hover",                         (xs, sm, md, lg, xl)),
+  (c-active,                          color,                                  $colors,                      ".is-active",                     (xs, sm, md, lg, xl)),
+  (c-placeholder,                     color,                                  $colors,                      "::placeholder",                  (xs, sm, md, lg, xl)),
+  (c-focus-placeholder,               color,                                  $colors,                      ":focus::placeholder",            (xs, sm, md, lg, xl)),
+  (c-disabled,                        color,                                  $colors,                      "[disabled]",                     (xs, sm, md, lg, xl)),
+  (cu,                                cursor,                                 $cursor,                      null,                             (xs, sm, md, lg, xl)),
+  (cu-disabled,                       cursor,                                 $cursor,                      "[disabled]",                     (xs, sm, md, lg, xl)),
+  (d,                                 display,                                $display,                     null,                             (xs, sm, md, lg, xl)),
+  (fill,                              fill,                                   $colors,                      null,                             (xs, sm, md, lg, xl)),
+  (fill-hover,                        fill,                                   $colors,                      ":hover",                         (xs, sm, md, lg, xl)),
+  (fs,                                font-size,                              $font-size,                   null,                             (xs, sm, md, lg, xl)),
+  (fw,                                font-weight,                            $font-weight,                 null,                             (xs, sm, md, lg, xl)),
+  (fwr,                               flex-wrap,                              $flex-wrap,                   null,                             (xs, sm, md, lg, xl)),
+  (h,                                 height,                                 $height,                      null,                             (xs, sm, md, lg, xl)),
+  (jc,                                justify-content,                        $justify-content,             null,                             (xs, sm, md, lg, xl)),
+  (left,                              left,                                   $coordinates,                 null,                             (xs, sm, md, lg, xl)),
+  (lh,                                line-height,                            $line-height,                 null,                             (xs, sm, md, lg, xl)),
+  (ls,                                letter-spacing,                         $letter-spacing,              null,                             (xs, sm, md, lg, xl)),
+  (m,                                 margin,                                 $margin,                      null,                             (xs, sm, md, lg, xl)),
+  (ml,                                margin-left,                            $margin,                      null,                             (xs, sm, md, lg, xl)),
+  (mr,                                margin-right,                           $margin,                      null,                             (xs, sm, md, lg, xl)),
+  (maxw,                              max-width,                              $max-width,                   null,                             (xs, sm, md, lg, xl)),
+  (o,                                 opacity,                                $opacity,                     null,                             (xs, sm, md, lg, xl)),
+  (ou,                                outline,                                $outline,                     null,                             (xs, sm, md, lg, xl)),
+  (p,                                 padding,                                $padding,                     null,                             (xs, sm, md, lg, xl)),
+  (pb,                                padding-bottom,                         $padding,                     null,                             (xs, sm, md, lg, xl)),
+  (pt,                                padding-top,                            $padding,                     null,                             (xs, sm, md, lg, xl)),
+  (px,                                (padding-left, padding-right),          $padding,                     null,                             (xs, sm, md, lg, xl)),
+  (py,                                (padding-top, padding-bottom),          $padding,                     null,                             (xs, sm, md, lg, xl)),
+  (pos,                               position,                               $position,                    null,                             (xs, sm, md, lg, xl)),
+  (right,                             right,                                  $coordinates,                 null,                             (xs, sm, md, lg, xl)),
+  (ta,                                text-align,                             $text-align,                  null,                             (xs, sm, md, lg, xl)),
+  (td,                                text-decoration,                        $text-decoration,             null,                             (xs, sm, md, lg, xl)),
+  (tt,                                text-transform,                         $text-transform,              null,                             (xs, sm, md, lg, xl)),
+  (t,                                 transition,                             $transition,                  null,                             (xs, sm, md, lg, xl)),
+  (t-placeholder,                     transition,                             $transition,                  "::placeholder",                  (xs, sm, md, lg, xl)),
+  (top,                               top,                                    $coordinates,                 null,                             (xs, sm, md, lg, xl)),
+  (va,                                vertical-align,                         $vertical-align,              null,                             (xs, sm, md, lg, xl)),
+  (w,                                 width,                                  $width,                       null,                             (xs, sm, md, lg, xl))
+);

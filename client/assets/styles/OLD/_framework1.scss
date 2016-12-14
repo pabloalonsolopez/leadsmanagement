@@ -1,0 +1,63 @@
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+@function generate-argument($string) {
+  $string: "\\(" + $string + "\\)";
+  $string: str-replace($string, "/", "\\/");
+  $string: str-replace($string, "#", "\\#");
+  $string: str-replace($string, ".", "\\.");
+  $string: str-replace($string, "%", "\\%");
+  @return $string;
+}
+
+@function get-breakpoint-suffix($breakpoint-name) {
+  @if map-get($breakpoints, $breakpoint-name) == 0 {
+    @return "";
+  } @else {
+    @return \@#{$breakpoint-name};
+  }
+}
+
+@mixin media($breakpoint-name) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint-name);
+  @if $breakpoint-value == 0 {
+    @content;
+  } @else {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}
+
+@mixin generate-classes() {
+  @each $prefix, $props, $values, $suffix, $breakpoints in $dictionary {
+    @if $breakpoints == null {
+      @each $name, $value in $values {
+        .#{$prefix}#{generate-argument($name)}#{$suffix} {
+          @each $prop in $props {
+            #{$prop}: $value;
+          }
+        }
+      }
+    } @else {
+      @each $breakpoint-name in $breakpoints {
+        @include media($breakpoint-name) {          
+          @each $name, $value in $values {
+            .#{$prefix}#{generate-argument($name)}#{get-breakpoint-suffix($breakpoint-name)}#{$suffix} {
+              @each $prop in $props {
+                #{$prop}: $value;
+              }
+            }
+          }
+        }
+      }  
+    }
+  }
+}
+
+@include generate-classes();

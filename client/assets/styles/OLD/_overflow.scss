@@ -1,0 +1,18 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .overflow-visible#{bp-suffix($bp-name)} { overflow: visible; }
+    .overflow-hidden#{bp-suffix($bp-name)} { overflow: hidden; }
+    .overflow-scroll#{bp-suffix($bp-name)} { overflow: scroll; }
+    .overflow-auto#{bp-suffix($bp-name)} { overflow: auto; }
+
+    .overflow-x-visible#{bp-suffix($bp-name)} { overflow-x: visible; }
+    .overflow-x-hidden#{bp-suffix($bp-name)} { overflow-x: hidden; }
+    .overflow-x-scroll#{bp-suffix($bp-name)} { overflow-x: scroll; }
+    .overflow-x-auto#{bp-suffix($bp-name)} { overflow-x: auto; }
+
+    .overflow-y-visible#{bp-suffix($bp-name)} { overflow-y: visible; }
+    .overflow-y-hidden#{bp-suffix($bp-name)} { overflow-y: hidden; }
+    .overflow-y-scroll#{bp-suffix($bp-name)} { overflow-y: scroll; }
+    .overflow-y-auto#{bp-suffix($bp-name)} { overflow-y: auto; }
+  }
+}

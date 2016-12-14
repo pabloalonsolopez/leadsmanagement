@@ -1,0 +1,14 @@
+<form [formGroup]="leadForm" (ngSubmit)="onSubmit.emit(leadForm.value)">
+  <input type="hidden" id="_id" formControlName="_id"/>
+  <div class="d(flex) fwr(wrap) p(45px)">
+    <div class="w(100%) p(15px)">
+      <label class="{{'label' | f}}" for="name">Nombre</label>
+      <input class="{{'form-control' | f}}" type="text" id="name" placeholder="Nombre" formControlName="name"/>
+      <p *ngIf="formErrors.name">{{formErrors.name}}</p>
+    </div>
+  </div>
+  <div class="d(flex) bt(1) bc(porcelain) px(60px) py(40px)">
+    <input class="{{'button-primary' | f}} ml(auto)" type="submit" value="{{submitText}}" [disabled]="!leadForm.valid"/>
+    <a class="{{'button' | f}} ml(10px)" (click)="onCancel.emit()">Cancelar</a>
+  </div>
+</form>

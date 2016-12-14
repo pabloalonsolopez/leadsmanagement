@@ -1,0 +1,9 @@
+<div class="pos(fixed) top(0) right(0) bottom(0) left(0) bgc(ebony-clay) o(0.9)"></div>
+<div class="d(flex) ai(center) jc(center) pos(fixed) top(0) right(0) bottom(0) left(0)">
+    <div class="w(650px) bra(3px) bgc(white)">
+        <div class="bb(1) bc(porcelain) px(60px) py(40px)">
+            <h1 class="lh(1.25) fw(300) fs(3.2rem)">Nuevo Cliente Potencial</h1>
+        </div>
+        <lm-lead-form [lead]="lead" [submitText]="'Crear Cliente Potencial'" (onSubmit)="createLead($event)" (onCancel)="cancel()"></lm-lead-form>
+    </div>
+</div>

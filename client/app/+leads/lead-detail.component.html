@@ -1,0 +1,13 @@
+<div *ngIf="lead">
+    <div class="bgc(red) pb(40px) pt(15px)">
+        <div class="d(flex) ai(center) maxw(xl) m(0-auto) px(20px)">
+            <div>
+                <h1 class="fw(300) fs(3.2rem) c(white)">{{lead.name}}</h1>
+            </div>
+            <div class="ml(auto)">
+                <a class="{{'button' | f}} {{'button-primary-alt' | f}}" (click)="openEditLeadModal()">Editar Lead</a>
+                <a class="{{'button' | f}} {{'button-primary-alt' | f}} ml(10px)" (click)="deleteLead()">Eliminar Lead</a>
+            </div>
+        </div>
+    </div>
+</div>

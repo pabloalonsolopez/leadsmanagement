@@ -1,0 +1,8 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .bt-0#{bp-suffix($bp-name)} { border-top-width: 0; }
+    .br-0#{bp-suffix($bp-name)} { border-right-width: 0; }
+    .bb-0#{bp-suffix($bp-name)} { border-bottom-width: 0; }
+    .bl-0#{bp-suffix($bp-name)} { border-left-width: 0; }
+  }
+}

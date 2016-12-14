@@ -1,0 +1,15 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .normal#{bp-suffix($bp-name)} { font-weight: normal; }
+    .b#{bp-suffix($bp-name)} { font-weight: bold; }
+    .fw1#{bp-suffix($bp-name)} { font-weight: 100; }
+    .fw2#{bp-suffix($bp-name)} { font-weight: 200; }
+    .fw3#{bp-suffix($bp-name)} { font-weight: 300; }
+    .fw4#{bp-suffix($bp-name)} { font-weight: 400; }
+    .fw5#{bp-suffix($bp-name)} { font-weight: 500; }
+    .fw6#{bp-suffix($bp-name)} { font-weight: 600; }
+    .fw7#{bp-suffix($bp-name)} { font-weight: 700; }
+    .fw8#{bp-suffix($bp-name)} { font-weight: 800; }
+    .fw9#{bp-suffix($bp-name)} { font-weight: 900; }
+  }
+}
