@@ -16,8 +16,8 @@ import { LeadsService } from "./leads.service"
 @Modal()
 export class LeadEditComponent {
 
-  destroy: Function
   closeModal: Function
+  destroy: Function
   ok: Function
 
   @Input() lead: Lead

@@ -1,0 +1,24 @@
+.form-title {
+  padding: $spacer8 0 $spacer1 0;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: $red;
+}
+
+.form-group {
+  min-height: 51px;
+  margin-top: $spacer2;
+  border-bottom: 1px solid $geyser;
+  padding-bottom: $spacer2;
+}
+
+.label {
+  font-size: 1.3rem;
+  color: $label-color;
+}
+
+input {
+  font-family: inherit;
+  color: inherit;
+  outline: 0;
+}

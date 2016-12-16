@@ -1,0 +1,96 @@
+//Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+//Grid
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$grid-columns:                12 !default;
+$grid-gutter-width-base:      30px !default;
+
+$grid-gutter-widths: (
+  xs: $grid-gutter-width-base,
+  sm: $grid-gutter-width-base,
+  md: $grid-gutter-width-base,
+  lg: $grid-gutter-width-base,
+  xl: $grid-gutter-width-base
+) !default;
+
+//Spacing
+$spacer1:                     5px !default;
+$spacer2:                     10px !default;
+$spacer3:                     15px !default;
+$spacer4:                     20px !default;
+$spacer5:                     25px !default;
+$spacer6:                     30px !default;
+$spacer7:                     35px !default;
+$spacer8:                     40px !default;
+$spacer:                      $spacer4 !default;
+$spacers: (
+  0: (
+    x: 0,
+    y: 0
+  ),
+  1: (
+    x: $spacer1,
+    y: $spacer1
+  ),
+  2: (
+    x: $spacer2,
+    y: $spacer2
+  ),
+  3: (
+    x: $spacer3,
+    y: $spacer3
+  ),
+  4: (
+    x: $spacer4,
+    y: $spacer4
+  ),
+  5: (
+    x: $spacer5,
+    y: $spacer5
+  ),
+  6: (
+    x: $spacer6,
+    y: $spacer6
+  ),
+  7: (
+    x: $spacer7,
+    y: $spacer7
+  ),
+  8: (
+    x: $spacer8,
+    y: $spacer8
+  )
+) !default;
+
+//Colors
+$white:                     #FFFFFF;
+$white-60:                  rgba(255, 255, 255, 0.6);
+$white-30:                  rgba(255, 255, 255, 0.3);
+$athens-gray:               #F9F9FB;
+$biscay:                    #16325C;
+$kashmir-blue:              #54698D;
+$geyser:                    #D8DDE6;
+$azure:                     #1589EE;
+$red:                       #E60000;
+$red-light:                 #E53F3F;
+
+$body-bg-color:             $athens-gray;
+$body-color:                $biscay;
+
+$link-color:                $azure;
+$link-hover-color:          $azure;
+
+$label-color:               $kashmir-blue;

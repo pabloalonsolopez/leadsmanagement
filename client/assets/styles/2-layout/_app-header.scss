@@ -1,0 +1,59 @@
+.app-header {
+  flex: 0 0 auto;
+  padding: $spacer 0;
+  background-color: $red;
+  
+  .app-header-navigation {
+    display: flex;
+    align-items: center;
+    a {
+      margin: 0 $spacer;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .app-header-session {
+    display: flex;
+    align-items: center;
+    a {
+      margin: 0 $spacer;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .logo {
+    width: 24px;
+    height: 24px;
+    fill: $white-60;
+    transition: all 0.125s ease-in;
+    &:hover {
+      fill: $white;
+    }
+  }
+
+  .app-header-separator {
+    width: 1px;
+    height: 24px;
+    background-color: $white-30;
+  }
+  
+  a {
+    font-size: 1.3rem;
+    color: $white-60;
+    transition: all 0.125s ease-in;
+    &:hover, &.is-active {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}

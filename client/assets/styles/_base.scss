@@ -15,14 +15,27 @@ html {
 }
 
 body {
-  background-color: $alabaster;
+  background-color: $body-bg-color;
   font-family: "Open Sans";
   line-height: 1.5;
   font-weight: 400;
   font-size: 1.4rem;
-  color: $bright-gray;
+  color: $body-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,13 +45,25 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.4rem;
 }
 
-input {
-  font-family: inherit;
-  color: inherit;
-}
-
-select:invalid { color: gray; }
-
 img {
   max-width: 100%;
+}
+
+table {
+  table-layout: fixed;
+  th, td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.truncate {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
 }

@@ -1,8 +1,0 @@
-@each $bp-name in map-keys($breakpoints) {
-  @include media($bp-name) {
-    .static#{bp-suffix($bp-name)} { position: static; }
-    .relative#{bp-suffix($bp-name)} { position: relative; }
-    .absolute#{bp-suffix($bp-name)} { position: absolute; }
-    .fixed#{bp-suffix($bp-name)} { position: fixed; }
-  }
-}

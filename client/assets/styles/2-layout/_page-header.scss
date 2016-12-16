@@ -1,0 +1,22 @@
+.page-header {
+  flex: 0 0 auto;
+  padding: $spacer3 0 $spacer8 0;
+  background-color: $red;
+  .entity-type {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: $white-60;
+    letter-spacing: 0.1rem;
+  }
+  h1 {
+    line-height: 1.25;
+    font-weight: 300;
+    font-size: 3.2rem;
+    color: $white;
+  }
+  h2 {
+    font-size: 1.6rem;
+    color: $white;
+  }
+}

@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, ViewContainerRef, Injector } from "@angul
 import { ModalService } from "./modal.service"
 
 @Component({
-  selector: "modal-placeholder",
+  selector: "lm-modal-placeholder",
   template: "<div #modalplaceholder></div>"
 })
 

@@ -1,7 +1,0 @@
-@each $bp-name in map-keys($breakpoints) {
-  @include media($bp-name) {
-    .tracked#{bp-suffix($bp-name)} { letter-spacing: .1em; }
-    .tracked-tight#{bp-suffix($bp-name)} { letter-spacing: -.05em; }
-    .tracked-mega#{bp-suffix($bp-name)} { letter-spacing: .25em; }
-  }
-}

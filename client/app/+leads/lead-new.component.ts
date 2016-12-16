@@ -16,8 +16,8 @@ import { LeadsService } from "./leads.service"
 @Modal()
 export class LeadNewComponent implements OnInit {
 
-  destroy: Function
   closeModal: Function
+  destroy: Function
   ok: Function
 
   lead: Lead

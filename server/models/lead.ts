@@ -1,7 +1,26 @@
 import { Schema, model } from "mongoose"
 
 const LeadSchema = new Schema({
-  name: String
+  mobileNumber: String,
+  email: String,
+  documentNumber: String,
+  fixNumber: String,
+  addressStreetType: String,
+  addressStreetName: String,
+  addressNumber: String,
+  addressLadder: String,
+  addressFloor: String,
+  addressCity: String,
+  addressProvince: String,
+  addressPostalCode: String,
+  serviceType: String,
+  offerType: String,
+  changeReason: String,
+  currentCompany: String,
+  preferredContactTime: String,
+  preferredContactMethod: String,
+  comments: String,
+  status: String
 })
 
 const Lead = model("Lead", LeadSchema)

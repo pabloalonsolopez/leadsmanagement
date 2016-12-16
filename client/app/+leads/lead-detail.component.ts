@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core"
 import { ActivatedRoute, Params, Router } from "@angular/router"
 
 import { ModalService } from "../core/modal/modal.service"
+import { SharedModule } from "../shared/shared.module"
+import { ConfirmModalComponent } from "../shared/confirm-modal/confirm-modal.component"
 import { LeadsModule } from "./leads.module"
 import { LeadEditComponent } from "./lead-edit.component"
 
@@ -41,10 +43,20 @@ export class LeadDetailComponent implements OnInit {
   }
 
   deleteLead(): void {
-    this.leadsService.deleteLead(this.lead).subscribe(
-      () => this.router.navigate(["/leads"]),
-      error => this.error = error
-    )
+    this.modalService.create(SharedModule, ConfirmModalComponent, {
+      title: 'Eliminar Cliente Potencial',
+      body: '¿Está seguro de querer eliminar el cliente potencial?',
+      okButtonText: 'Estoy seguro',
+      koButtonText: 'Lo he pensado mejor',
+      decision: (agree: boolean) => {
+        if(agree) {
+          this.leadsService.deleteLead(this.lead).subscribe(
+            () => this.router.navigate(["/leads"]),
+            error => this.error = error
+          )
+        }
+      }
+    })
   }
 
 }

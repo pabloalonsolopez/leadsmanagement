@@ -11,18 +11,46 @@ import { Lead } from './lead.model'
 export class LeadFormComponent implements OnInit {
   
   @Input() lead: Lead
-  @Input() submitText: string
+  @Input() submitButtonText: string
   @Output() onSubmit: EventEmitter<Lead> = new EventEmitter<Lead>()
   @Output() onCancel: EventEmitter<Lead> = new EventEmitter<Lead>()
 
   leadForm: FormGroup
   error: any
   formErrors: any = {
-    'name': ''
+    'mobileNumber': '',
+    'email': '',
+    'documentNumber': '',
+    'fixNumber': '',
+    'addressStreetType': '',
+    'addressStreetName': '',
+    'addressNumber': '',
+    'addressLadder': '',
+    'addressFloor': '',
+    'addressCity': '',
+    'addressProvince': '',
+    'addressPostalCode': '',
+    'serviceType': '',
+    'offerType': '',
+    'changeReason': '',
+    'currentCompany': '',
+    'preferredContactTime': '',
+    'preferredContactMethod': '',
+    'comments': '',
+    'status': ''
   }
   validationMessages: any = {
-    'name': {
-      'required': 'Nombre requerido.'
+    'serviceType': {
+      'required': 'Tipo de Servicio requerido.'
+    },
+    'offerType': {
+      'required': 'Tipo de Oferta requerido.'
+    },
+    'changeReason': {
+      'required': 'Motivo de Cambio requerido.'
+    },
+    'currentCompany': {
+      'required': 'Compañía Actual requerido.'
     }
   }
   
@@ -35,7 +63,26 @@ export class LeadFormComponent implements OnInit {
   buildForm(): void {
     this.leadForm = this.formBuilder.group({
       '_id': [this.lead._id],
-      'name': [this.lead.name, Validators.required]
+      'mobileNumber': [this.lead.mobileNumber],
+      'email': [this.lead.email],
+      'documentNumber': [this.lead.documentNumber],
+      'fixNumber': [this.lead.fixNumber],
+      'addressStreetType': [this.lead.addressStreetType],
+      'addressStreetName': [this.lead.addressStreetName],
+      'addressNumber': [this.lead.addressNumber],
+      'addressLadder': [this.lead.addressLadder],
+      'addressFloor': [this.lead.addressFloor],
+      'addressCity': [this.lead.addressCity],
+      'addressProvince': [this.lead.addressProvince],
+      'addressPostalCode': [this.lead.addressPostalCode],
+      'serviceType': [this.lead.serviceType, Validators.required],
+      'offerType': [this.lead.offerType, Validators.required],
+      'changeReason': [this.lead.changeReason, Validators.required],
+      'currentCompany': [this.lead.currentCompany, Validators.required],
+      'preferredContactTime': [this.lead.preferredContactTime],
+      'preferredContactMethod': [this.lead.preferredContactMethod],
+      'comments': [this.lead.comments],
+      'status': [this.lead.status]
     })
     this.leadForm.valueChanges.subscribe(
       data => this.onValueChanged(data)

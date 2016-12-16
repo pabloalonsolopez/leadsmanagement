@@ -1,8 +1,19 @@
-@import "vendors/normalize";
+@import "0-vendors/normalize";
 
-@import "tools/variables";
-@import "tools/framework";
+@import "1-utilities/variables";
+@import "1-utilities/breakpoints";
+@import "1-utilities/grid";
+@import "1-utilities/spacing";
+
+@import "2-layout/app";
+@import "2-layout/app-header";
+@import "2-layout/app-content";
+@import "2-layout/page-header";
+@import "2-layout/page-content";
+@import "2-layout/home";
+
+@import "3-components/icon";
+@import "3-components/form";
+@import "3-components/button";
 
 @import "base";
-
-@import "components/icon";

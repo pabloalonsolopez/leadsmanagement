@@ -17,13 +17,18 @@ export class LeadsListComponent implements OnInit {
 
   leads: Lead[]
   error: any
+  loading: boolean = false
 
   constructor(private router: Router, private modalService: ModalService, private leadsService: LeadsService) {}
 
   ngOnInit(): void {
+    this.loading = true
     this.leadsService.getLeads()
       .subscribe(
-        leads => this.leads = leads,
+        leads => {
+          this.leads = leads
+          this.loading = false
+        },
         error => this.error = error
       )
   }

@@ -1,0 +1,15 @@
+<div class="pos(fixed) top(0) right(0) bottom(0) left(0) bgc(bright-gray) o(0.9)"></div>
+<div class="d(flex) fd(column) ai(center) jc(center) pos(fixed) top(0) right(0) bottom(0) left(0) ov(auto)">
+    <div class="bra(4px) bgc(alabaster) boxs(modal)">
+        <div class="btra(4px) px(60px) py(40px) bgc(red)">
+            <h1 class="lh(1.25) fw(300) fs(3.2rem) c(white)">{{title}}</h1>
+        </div>
+        <div class="px(60px) py(40px)">
+            {{body}}
+        </div>
+        <div class="d(flex) bt(1) bc(alto) px(60px) py(40px)">
+            <a (click)="ok()">{{okButtonText}}</a>
+            <a (click)="ko()">{{koButtonText}}</a>
+        </div>
+    </div>
+</div>

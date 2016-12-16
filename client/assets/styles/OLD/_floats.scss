@@ -1,7 +1,0 @@
-@each $bp-name in map-keys($breakpoints) {
-  @include media($bp-name) {
-    .fl#{bp-suffix($bp-name)} { float: left;  _display: inline; }
-    .fr#{bp-suffix($bp-name)} { float: right; _display: inline; }
-    .fn#{bp-suffix($bp-name)} { float: none; }
-  }
-}
