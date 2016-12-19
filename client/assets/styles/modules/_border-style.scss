@@ -1,0 +1,8 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .b--dotted#{bp-suffix($bp-name)} { border-style: dotted; }
+    .b--dashed#{bp-suffix($bp-name)} { border-style: dashed; }
+    .b--solid#{bp-suffix($bp-name)}  { border-style: solid; }
+    .b--none#{bp-suffix($bp-name)}   { border-style: none; }
+  }
+}

@@ -1,0 +1,7 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    @each $ts-name, $ts-value in $type-scales {
+      .f#{$ts-name}#{bp-suffix($bp-name)} { font-size: $ts-value; }
+    }
+  }
+}

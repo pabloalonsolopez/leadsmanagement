@@ -1,0 +1,11 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    @each $s-name, $s-value in $spacings {
+      .na#{$s-name}#{bp-suffix($bp-name)} { margin: -$s-value; }
+      .nl#{$s-name}#{bp-suffix($bp-name)} { margin-left: -$s-value; }
+      .nr#{$s-name}#{bp-suffix($bp-name)} { margin-right: -$s-value; }
+      .nb#{$s-name}#{bp-suffix($bp-name)} { margin-bottom: -$s-value; }
+      .nt#{$s-name}#{bp-suffix($bp-name)} { margin-top: -$s-value; }
+    }
+  }
+}

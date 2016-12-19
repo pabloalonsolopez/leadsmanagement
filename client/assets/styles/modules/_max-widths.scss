@@ -1,0 +1,17 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .mw-100#{bp-suffix($bp-name)}  { max-width: 100%; }
+
+    .mw1#{bp-suffix($bp-name)}     { max-width: 1rem; }
+    .mw2#{bp-suffix($bp-name)}     { max-width: 2rem; }
+    .mw3#{bp-suffix($bp-name)}     { max-width: 4rem; }
+    .mw4#{bp-suffix($bp-name)}     { max-width: 8rem; }
+    .mw5#{bp-suffix($bp-name)}     { max-width: 16rem; }
+    .mw6#{bp-suffix($bp-name)}     { max-width: 32rem; }
+    .mw7#{bp-suffix($bp-name)}     { max-width: 48rem; }
+    .mw8#{bp-suffix($bp-name)}     { max-width: 64rem; }
+    .mw9#{bp-suffix($bp-name)}     { max-width: 96rem; }
+
+    .mw-none#{bp-suffix($bp-name)} { max-width: none; }
+  }
+}

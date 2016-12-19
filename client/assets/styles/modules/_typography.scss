@@ -1,0 +1,31 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .measure#{bp-suffix($bp-name)} {
+      max-width: 30em;
+    }
+
+    .measure-wide#{bp-suffix($bp-name)} {
+      max-width: 34em;
+    }
+
+    .measure-narrow#{bp-suffix($bp-name)} {
+      max-width: 20em;
+    }
+
+    .indent#{bp-suffix($bp-name)} {
+      text-indent: 1em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .small-caps#{bp-suffix($bp-name)} {
+      font-variant: small-caps;
+    }
+
+    .truncate#{bp-suffix($bp-name)} {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

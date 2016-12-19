@@ -1,0 +1,12 @@
+.cf:before, .cf:after { content: " "; display: table; }
+.cf:after             { clear: both; }
+.cf                   { *zoom: 1; }
+
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .cl#{bp-suffix($bp-name)} { clear: left; }
+    .cr#{bp-suffix($bp-name)} { clear: right; }
+    .cb#{bp-suffix($bp-name)} { clear: both; }
+    .cn#{bp-suffix($bp-name)} { clear: none; }
+  }
+}

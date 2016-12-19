@@ -1,0 +1,4 @@
+@each $c-name, $c-value in $colors {
+  .hover-#{$c-name}:hover, .hover-#{$c-name}:focus { color: $c-value; }
+  .hover-bg-#{$c-name}:hover, .hover-bg-#{$c-name}:focus { background-color: $c-value; }
+}

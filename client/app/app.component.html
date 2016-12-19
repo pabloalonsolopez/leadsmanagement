@@ -1,22 +1,13 @@
 <lm-modal-placeholder></lm-modal-placeholder>
-<div class="app-header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <nav class="app-header-navigation"> 
-                    <a routerLink=""><lm-icon class="logo" [icon]="'logo'"></lm-icon></a>
-                    <span class="app-header-separator"></span>
-                    <a routerLink="home" routerLinkActive="is-active">Inicio</a>
-                    <a routerLink="leads" routerLinkActive="is-active">Clientes Potenciales</a>
-                    <a routerLink="administration" routerLinkActive="is-active">Administración</a>
-                </nav>
-            </div>
-            <div class="col col-auto">
-                <nav class="app-header-session">
-                    <a>Pablo Alonso López</a>
-                </nav>
-            </div>
-        </div>
+<div class="d(flex) ai(center) p(20px) bg(red)">
+    <div class="d(flex) ai(center)">
+        <div class="pr(20px) br(1) bc(white-30)"><a routerLink=""><lm-icon class="w(24px) h(24px) fill(white-60) fill-hover(white) t(fill)" [icon]="'logo'"></lm-icon></a></div>
+        <a class="ml(20px) fs(1.3rem) c(white-60) c-hover(white) c-is-active(white) t(color) td(none)" routerLink="home" routerLinkActive="is-active">Inicio</a>
+        <a class="ml(40px) fs(1.3rem) c(white-60) c-hover(white) c-is-active(white) t(color) td(none)" routerLink="leads" routerLinkActive="is-active">Clientes Potenciales</a>
+        <a class="ml(40px) fs(1.3rem) c(white-60) c-hover(white) c-is-active(white) t(color) td(none)" routerLink="administration" routerLinkActive="is-active">Administración</a>
+    </div>
+    <div class="d(flex) ai(center) ml(auto)">
+        <a class="fs(1.3rem) c(white-60) c-hover(white) cu(pointer)">Pablo Alonso López</a>
     </div>
 </div>
 <div class="app-content">

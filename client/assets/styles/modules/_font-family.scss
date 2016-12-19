@@ -1,0 +1,5 @@
+@each $f-name, $f-value in $font-families {
+  .#{$f-name} { font-family: $f-value; }
+}
+
+code { font-family: map-get($font-families, code); }

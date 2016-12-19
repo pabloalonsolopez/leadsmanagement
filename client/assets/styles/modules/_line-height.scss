@@ -1,0 +1,7 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .lh-solid#{bp-suffix($bp-name)} { line-height: 1; }
+    .lh-title#{bp-suffix($bp-name)} { line-height: 1.25; }
+    .lh-copy#{bp-suffix($bp-name)}  { line-height: 1.5; }
+  }
+}

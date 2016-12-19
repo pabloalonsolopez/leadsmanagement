@@ -1,0 +1,20 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .dn#{bp-suffix($bp-name)}              { display: none; }
+    .di#{bp-suffix($bp-name)}              { display: inline; }
+    .db#{bp-suffix($bp-name)}              { display: block; }
+    .dib#{bp-suffix($bp-name)}             { display: inline-block; }
+    .dit#{bp-suffix($bp-name)}             { display: inline-table; }
+    .dt#{bp-suffix($bp-name)}              { display: table; }
+    .dtc#{bp-suffix($bp-name)}             { display: table-cell; }
+    .dt-row#{bp-suffix($bp-name)}          { display: table-row; }
+    .dt-row-group#{bp-suffix($bp-name)}    { display: table-row-group; }
+    .dt-column#{bp-suffix($bp-name)}       { display: table-column; }
+    .dt-column-group#{bp-suffix($bp-name)} { display: table-column-group; }
+
+    .dt--fixed#{bp-suffix($bp-name)} {
+      table-layout: fixed;
+      width: 100%;
+    }
+  }
+}

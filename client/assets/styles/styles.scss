@@ -1,19 +1,21 @@
-@import "0-vendors/normalize";
+@import "tools/variables";
+@import "tools/framework";
 
-@import "1-utilities/variables";
-@import "1-utilities/breakpoints";
-@import "1-utilities/grid";
-@import "1-utilities/spacing";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
 
-@import "2-layout/app";
-@import "2-layout/app-header";
-@import "2-layout/app-content";
-@import "2-layout/page-header";
-@import "2-layout/page-content";
-@import "2-layout/home";
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-@import "3-components/icon";
-@import "3-components/form";
-@import "3-components/button";
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-@import "base";
+lm-icon > svg {
+  width: inherit;
+  height: inherit;
+  vertical-align: middle;
+}

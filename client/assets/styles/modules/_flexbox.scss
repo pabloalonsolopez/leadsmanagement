@@ -1,0 +1,54 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .flex#{bp-suffix($bp-name)}            { display: flex; }
+    .inline-flex#{bp-suffix($bp-name)}     { display: inline-flex; }
+
+    .flex-auto#{bp-suffix($bp-name)} {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .flex-none#{bp-suffix($bp-name)}       { flex: none; }
+
+    .flex-column#{bp-suffix($bp-name)}     { flex-direction: column; }
+    .flex-row#{bp-suffix($bp-name)}        { flex-direction: row; }
+    .flex-wrap#{bp-suffix($bp-name)}       { flex-wrap: wrap; }
+
+    .items-start#{bp-suffix($bp-name)}     { align-items: flex-start; }
+    .items-end#{bp-suffix($bp-name)}       { align-items: flex-end; }
+    .items-center#{bp-suffix($bp-name)}    { align-items: center; }
+    .items-baseline#{bp-suffix($bp-name)}  { align-items: baseline; }
+    .items-stretch#{bp-suffix($bp-name)}   { align-items: stretch; }
+
+    .self-start#{bp-suffix($bp-name)}      { align-self: flex-start; }
+    .self-end#{bp-suffix($bp-name)}        { align-self: flex-end; }
+    .self-center#{bp-suffix($bp-name)}     { align-self: center; }
+    .self-baseline#{bp-suffix($bp-name)}   { align-self: baseline; }
+    .self-stretch#{bp-suffix($bp-name)}    { align-self: stretch; }
+
+    .justify-start#{bp-suffix($bp-name)}   { justify-content: flex-start; }
+    .justify-end#{bp-suffix($bp-name)}     { justify-content: flex-end; }
+    .justify-center#{bp-suffix($bp-name)}  { justify-content: center; }
+    .justify-between#{bp-suffix($bp-name)} { justify-content: space-between; }
+    .justify-around#{bp-suffix($bp-name)}  { justify-content: space-around; }
+
+    .content-start#{bp-suffix($bp-name)}   { align-content: flex-start; }
+    .content-end#{bp-suffix($bp-name)}     { align-content: flex-end; }
+    .content-center#{bp-suffix($bp-name)}  { align-content: center; }
+    .content-between#{bp-suffix($bp-name)} { align-content: space-between; }
+    .content-around#{bp-suffix($bp-name)}  { align-content: space-around; }
+    .content-stretch#{bp-suffix($bp-name)} { align-content: stretch; }
+
+    .order-0#{bp-suffix($bp-name)}         { order: 0; }
+    .order-1#{bp-suffix($bp-name)}         { order: 1; }
+    .order-2#{bp-suffix($bp-name)}         { order: 2; }
+    .order-3#{bp-suffix($bp-name)}         { order: 3; }
+    .order-4#{bp-suffix($bp-name)}         { order: 4; }
+    .order-5#{bp-suffix($bp-name)}         { order: 5; }
+    .order-6#{bp-suffix($bp-name)}         { order: 6; }
+    .order-7#{bp-suffix($bp-name)}         { order: 7; }
+    .order-8#{bp-suffix($bp-name)}         { order: 8; }
+    .order-last#{bp-suffix($bp-name)}      { order: 99999; }
+  }
+}

@@ -1,0 +1,6 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .cover#{bp-suffix($bp-name)}   { background-size: cover!important; }
+    .contain#{bp-suffix($bp-name)} { background-size: contain!important; }
+  }
+}

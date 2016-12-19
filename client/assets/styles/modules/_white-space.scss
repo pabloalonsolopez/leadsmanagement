@@ -1,0 +1,7 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .ws-normal#{bp-suffix($bp-name)} { white-space: normal; }
+    .nowrap#{bp-suffix($bp-name)}    { white-space: nowrap; }
+    .pre#{bp-suffix($bp-name)}       { white-space: pre; }
+  }
+}

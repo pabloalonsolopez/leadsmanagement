@@ -1,0 +1,7 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .strike#{bp-suffix($bp-name)}       { text-decoration: line-through; }
+    .underline#{bp-suffix($bp-name)}    { text-decoration: underline; }
+    .no-underline#{bp-suffix($bp-name)} { text-decoration: none; }
+  }
+}

@@ -1,0 +1,18 @@
+@function bp-suffix($breakpoint-name) {
+  @if map-get($breakpoints, $breakpoint-name) == 0 {
+    @return "";
+  } @else {
+    @return -#{$breakpoint-name};
+  }
+}
+
+@mixin media($breakpoint-name) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint-name);
+  @if $breakpoint-value == 0 {
+    @content;
+  } @else {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+}

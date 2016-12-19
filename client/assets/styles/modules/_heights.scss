@@ -1,0 +1,26 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .h1#{bp-suffix($bp-name)}         { height: 1rem; }
+    .h2#{bp-suffix($bp-name)}         { height: 2rem; }
+    .h3#{bp-suffix($bp-name)}         { height: 4rem; }
+    .h4#{bp-suffix($bp-name)}         { height: 8rem; }
+    .h5#{bp-suffix($bp-name)}         { height: 16rem; }
+
+    .h-25#{bp-suffix($bp-name)}       { height:  25%; }
+    .h-50#{bp-suffix($bp-name)}       { height:  50%; }
+    .h-75#{bp-suffix($bp-name)}       { height:  75%; }
+    .h-100#{bp-suffix($bp-name)}      { height: 100%; }
+
+    .min-h-100#{bp-suffix($bp-name)}  { min-height: 100%; }
+
+    .vh-25#{bp-suffix($bp-name)}      { height:  25vh; }
+    .vh-50#{bp-suffix($bp-name)}      { height:  50vh; }
+    .vh-75#{bp-suffix($bp-name)}      { height:  75vh; }
+    .vh-100#{bp-suffix($bp-name)}     { height: 100vh; }
+
+    .min-vh-100#{bp-suffix($bp-name)} { min-height: 100vh; }
+
+    .h-auto#{bp-suffix($bp-name)}     { height: auto; }
+    .h-inherit#{bp-suffix($bp-name)}  { height: inherit; }
+  }
+}

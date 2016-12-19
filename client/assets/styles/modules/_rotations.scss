@@ -1,0 +1,11 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .rotate-45#{bp-suffix($bp-name)}  { transform: rotate(45deg); }
+    .rotate-90#{bp-suffix($bp-name)}  { transform: rotate(90deg); }
+    .rotate-135#{bp-suffix($bp-name)} { transform: rotate(135deg); }
+    .rotate-180#{bp-suffix($bp-name)} { transform: rotate(180deg); }
+    .rotate-225#{bp-suffix($bp-name)} { transform: rotate(225deg); }
+    .rotate-270#{bp-suffix($bp-name)} { transform: rotate(270deg); }
+    .rotate-315#{bp-suffix($bp-name)} { transform: rotate(315deg); }
+  }
+}

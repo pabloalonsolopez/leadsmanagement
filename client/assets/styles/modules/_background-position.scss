@@ -1,0 +1,28 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .bg-center#{bp-suffix($bp-name)} { 
+      background-repeat: no-repeat;
+      background-position: center center; 
+    }
+
+    .bg-top#{bp-suffix($bp-name)} {    
+      background-repeat: no-repeat; 
+      background-position: top center;    
+    }
+
+    .bg-right#{bp-suffix($bp-name)} {  
+      background-repeat: no-repeat; 
+      background-position: center right;  
+    }
+
+    .bg-bottom#{bp-suffix($bp-name)} { 
+      background-repeat: no-repeat; 
+      background-position: bottom center; 
+    }
+
+    .bg-left#{bp-suffix($bp-name)} {   
+      background-repeat: no-repeat; 
+      background-position: center left;   
+    }
+  }
+}

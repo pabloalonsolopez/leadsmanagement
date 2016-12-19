@@ -1,20 +1,14 @@
 <div class="lm-lead-detail-inner" *ngIf="lead">
-    <div class="page-header">
-        <div class="container-fluid">
-            <div class="row row-middle">
-                <div class="col">
-                    <p class="entity-type">Cliente Potencial</p>
-                    <h1>{{lead.mobileNumber ? lead.mobileNumber : lead.email}}</h1>
-                    <h2 *ngIf="lead.mobileNumber && lead.email">{{lead.email}}</h2>
-                </div>
-                <div class="col col-auto">
-                    <div style="display: flex;">
-                        <a class="button-primary-alt">Acciones</a>
-                        <a class="button-alt  ml-3" (click)="openEditLeadModal()">Editar</a>
-                        <a class="button-alt ml-3" (click)="deleteLead()">Eliminar</a>
-                    </div>
-                </div>
-            </div>
+    <div class="d(flex) ai(center) bb(1) bc(geyser) p(20px) bg(catskill-white)">
+        <div>
+            <p class="fw(600) fs(1.2rem) c(kashmir-blue) tt(uppercase) ls(0.1rem)">Cliente Potencial</p>
+            <h1 class="lh(1.25) fw(300) fs(3.2rem)">{{lead.mobileNumber ? lead.mobileNumber : lead.email}}</h1>
+            <h2 class="lh(1.25) fw(400) fs(1.6rem) c(kashmir-blue)" *ngIf="lead.mobileNumber && lead.email">{{lead.email}}</h2>
+        </div>
+        <div class="d(flex) ai(center) ml(auto)">
+            <a class="b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(bg) t(c)">Acciones</a>
+            <a class="ml(10px) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(bg) t(c)" (click)="openEditLeadModal()">Editar</a>
+            <a class="ml(10px) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(bg) t(c)" (click)="deleteLead()">Eliminar</a>
         </div>
     </div>
     <div class="page-content py-8">

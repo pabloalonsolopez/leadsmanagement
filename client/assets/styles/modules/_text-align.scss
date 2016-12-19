@@ -1,0 +1,7 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .tl#{bp-suffix($bp-name)} { text-align: left; }
+    .tr#{bp-suffix($bp-name)} { text-align: right; }
+    .tc#{bp-suffix($bp-name)} { text-align: center; }
+  }
+}

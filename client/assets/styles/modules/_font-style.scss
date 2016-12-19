@@ -1,0 +1,6 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .i#{bp-suffix($bp-name)}         { font-style: italic; }
+    .fs-normal#{bp-suffix($bp-name)} { font-style: normal; }
+  }
+}

@@ -1,0 +1,7 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .word-normal#{bp-suffix($bp-name)} { word-break: normal; }
+    .word-wrap#{bp-suffix($bp-name)}   { word-break: break-all; }
+    .word-nowrap#{bp-suffix($bp-name)} { word-break: keep-all; }
+  }
+}

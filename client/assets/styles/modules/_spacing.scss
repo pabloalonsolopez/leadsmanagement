@@ -1,0 +1,15 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    @each $property, $abbrev in (padding: p, margin: m) {
+      @each $s-name, $s-value in $spacings {
+        .#{$abbrev}a#{$s-name}#{bp-suffix($bp-name)} { #{$property}: $s-value; }
+        .#{$abbrev}l#{$s-name}#{bp-suffix($bp-name)} { #{$property}-left: $s-value; }
+        .#{$abbrev}r#{$s-name}#{bp-suffix($bp-name)} { #{$property}-right: $s-value; }
+        .#{$abbrev}t#{$s-name}#{bp-suffix($bp-name)} { #{$property}-top: $s-value; }
+        .#{$abbrev}b#{$s-name}#{bp-suffix($bp-name)} { #{$property}-bottom: $s-value; }
+        .#{$abbrev}v#{$s-name}#{bp-suffix($bp-name)} { #{$property}-top: $s-value; #{$property}-bottom: $s-value; }
+        .#{$abbrev}h#{$s-name}#{bp-suffix($bp-name)} { #{$property}-left: $s-value; #{$property}-right: $s-value; }
+      }
+    }
+  }
+}

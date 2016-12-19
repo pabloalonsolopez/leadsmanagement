@@ -1,0 +1,28 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .w1#{bp-suffix($bp-name)}           { width: 1rem; }
+    .w2#{bp-suffix($bp-name)}           { width: 2rem; }
+    .w3#{bp-suffix($bp-name)}           { width: 4rem; }
+    .w4#{bp-suffix($bp-name)}           { width: 8rem; }
+    .w5#{bp-suffix($bp-name)}           { width: 16rem; }
+
+    .w-10#{bp-suffix($bp-name)}         { width:  10%; }
+    .w-20#{bp-suffix($bp-name)}         { width:  20%; }
+    .w-25#{bp-suffix($bp-name)}         { width:  25%; }
+    .w-30#{bp-suffix($bp-name)}         { width:  30%; }
+    .w-33#{bp-suffix($bp-name)}         { width:  33%; }
+    .w-34#{bp-suffix($bp-name)}         { width:  34%; }
+    .w-40#{bp-suffix($bp-name)}         { width:  40%; }
+    .w-50#{bp-suffix($bp-name)}         { width:  50%; }
+    .w-60#{bp-suffix($bp-name)}         { width:  60%; }
+    .w-70#{bp-suffix($bp-name)}         { width:  70%; }
+    .w-75#{bp-suffix($bp-name)}         { width:  75%; }
+    .w-80#{bp-suffix($bp-name)}         { width:  80%; }
+    .w-90#{bp-suffix($bp-name)}         { width:  90%; }
+    .w-100#{bp-suffix($bp-name)}        { width: 100%; }
+
+    .w-third#{bp-suffix($bp-name)}      { width: calc(100% / 3); }
+    .w-two-thirds#{bp-suffix($bp-name)} { width: calc(100% / 1.5); }
+    .w-auto#{bp-suffix($bp-name)}       { width: auto; }
+  }
+}

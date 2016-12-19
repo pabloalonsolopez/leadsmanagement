@@ -1,0 +1,36 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .aspect-ratio#{bp-suffix($bp-name)} {
+      height: 0;
+      position: relative;
+    }
+
+    .aspect-ratio--16x9#{bp-suffix($bp-name)} { padding-bottom: 56.25%; }
+    .aspect-ratio--9x16#{bp-suffix($bp-name)} { padding-bottom: 177.77%; }
+
+    .aspect-ratio--4x3#{bp-suffix($bp-name)}  { padding-bottom: 75%; }
+    .aspect-ratio--3x4#{bp-suffix($bp-name)}  { padding-bottom: 133.33%; }
+
+    .aspect-ratio--6x4#{bp-suffix($bp-name)}  { padding-bottom: 66.6%; }
+    .aspect-ratio--4x6#{bp-suffix($bp-name)}  { padding-bottom: 150%; }
+
+    .aspect-ratio--8x5#{bp-suffix($bp-name)}  { padding-bottom: 62.5%; }
+    .aspect-ratio--5x8#{bp-suffix($bp-name)}  { padding-bottom: 160%; }
+
+    .aspect-ratio--7x5#{bp-suffix($bp-name)}  { padding-bottom: 71.42%; }
+    .aspect-ratio--5x7#{bp-suffix($bp-name)}  { padding-bottom: 140%; }
+
+    .aspect-ratio--1x1#{bp-suffix($bp-name)}  { padding-bottom: 100%; }
+
+    .aspect-ratio--object#{bp-suffix($bp-name)} {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+    }
+  }
+}

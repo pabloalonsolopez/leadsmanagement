@@ -1,0 +1,27 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .br0#{bp-suffix($bp-name)}        { border-radius: 0; }
+    .br1#{bp-suffix($bp-name)}        { border-radius: .125rem; }
+    .br2#{bp-suffix($bp-name)}        { border-radius: .25rem; }
+    .br3#{bp-suffix($bp-name)}        { border-radius: .5rem; }
+    .br4#{bp-suffix($bp-name)}        { border-radius: 1rem; }
+    .br-100#{bp-suffix($bp-name)}     { border-radius: 100%; }
+    .br-pill#{bp-suffix($bp-name)}    { border-radius: 9999px; }
+    .br--bottom#{bp-suffix($bp-name)} {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .br--top#{bp-suffix($bp-name)} {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .br--right#{bp-suffix($bp-name)} {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .br--left#{bp-suffix($bp-name)} {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}

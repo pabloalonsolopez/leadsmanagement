@@ -1,0 +1,8 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .v-base#{bp-suffix($bp-name)} { vertical-align: baseline; }
+    .v-mid#{bp-suffix($bp-name)}  { vertical-align: middle; }
+    .v-top#{bp-suffix($bp-name)}  { vertical-align: top; }
+    .v-btm#{bp-suffix($bp-name)}  { vertical-align: bottom; }
+  }
+}

@@ -1,0 +1,8 @@
+@each $bp-name in map-keys($breakpoints) {
+  @include media($bp-name) {
+    .ttc#{bp-suffix($bp-name)} { text-transform: capitalize; }
+    .ttl#{bp-suffix($bp-name)} { text-transform: lowercase; }
+    .ttu#{bp-suffix($bp-name)} { text-transform: uppercase; }
+    .ttn#{bp-suffix($bp-name)} { text-transform: none; }
+  }
+}
