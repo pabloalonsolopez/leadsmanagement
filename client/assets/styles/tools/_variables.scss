@@ -1,4 +1,5 @@
 $transitions: (
+  all: (all .15s ease-in),
   bg: (background-color .15s ease-in),
   c: (color .15s ease-in),
   fill: (fill .15s ease-in)
@@ -142,6 +143,10 @@ $text-transformations: (
 );
 
 $widths: (
+  25%: 25%,
+  33.33%: 33.33%,
+  66.66%: 66.66%,
+  50%: 50%,
   100%: 100%,
   24px: 24px,
   40px: 40px,
@@ -155,11 +160,13 @@ $white-space: (
 $dictionary: (
  (ai,     align-items,                        $flex-alignments,       null,                 null),
  (bra,    border-radius,                      $border-radiuses,       null,                 null),
- (btra,   (border-top-left-radius,border-top-right-radius),                      $border-radiuses,       null,                 null),
+ (btra,   (border-top-left-radius, border-top-right-radius),                      $border-radiuses,       null,                 null),
+ (bbra,   (border-bottom-left-radius, border-bottom-right-radius),                      $border-radiuses,       null,                 null),
  (b,      border,                             $borders,               null,                 null),
  (bb,     border-bottom,                      $borders,               (hover, is-active),   null),
  (bl,     border-left,                        $borders,               (hover, is-active),   null),
  (br,     border-right,                       $borders,               (hover, is-active),   null),
+ (bt,     border-top,                         $borders,               (hover, is-active),   null),
  (bc,     border-color,                       $colors,                (hover, is-active),   null),
  (bco,    border-collapse,                    $border-collapse,       null,                 null),
  (bg,     background-color,                   $colors,                (hover, is-active),   null),
