@@ -19,3 +19,15 @@ lm-icon > svg {
   height: inherit;
   vertical-align: middle;
 }
+
+lm-leads {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+lm-leads-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

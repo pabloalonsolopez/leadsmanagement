@@ -1,39 +1,57 @@
 <div class="d(flex) ai(center) bb(1) bc(geyser) p(20px) bg(catskill-white)">
     <div>
-        <h1 class="lh(1.25) fw(300) fs(3.2rem)">Clientes Potenciales</h1>
+        <p class="fs(1.2rem) c(kashmir-blue) tt(uppercase) ls(0.1rem)">Clientes Potenciales</p>
+        <h1 class="lh(1.25) fw(400) fs(1.8rem)">Todos los Clientes Potenciales</h1>
+        <p class="pt(10px) fs(1.2rem) c(kashmir-blue)">{{leads?.length}} elemento<span *ngIf="leads?.length != 1">s</span> &middot; Última actualización {{lastUpdate}}</p>
     </div>
     <div class="d(flex) ai(center) ml(auto)">
-      <a class="b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(bg) t(c)" (click)="openCreateLeadModal()">Nuevo</a>
+      <a class="d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)" (click)="openCreateLeadModal()">Nuevo</a>
+      <a class="ml(10px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)">Importar</a>
+      <a class="ml(10px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)">Exportar</a>
     </div>
 </div>
-<div>
-  <table class="w(100%) bco(collapse)" *ngIf="leads?.length && !loading" style="table-layout:fixed">
+<div class="d(flex) flex(1) ov(auto)">
+  <table class="w(100%) bco(collapse)" *ngIf="leads?.length && !loading">
     <thead>
       <tr>
-        <th class="bb(1) bc(geyser) px(30px) py(15px) ta(left) fw(600) fs(1.3rem) c(nobel) tt(uppercase)">Id</th>
-        <th class="bb(1) bc(geyser) px(30px) py(15px) ta(left) fw(600) fs(1.3rem) c(nobel) tt(uppercase)">Teléfono Móvil</th>
-        <th class="bb(1) bc(geyser) px(30px) py(15px) ta(left) fw(600) fs(1.3rem) c(nobel) tt(uppercase)">Correo Electrónico</th>
-        <th class="bb(1) bc(geyser) px(30px) py(15px) ta(left) fw(600) fs(1.3rem) c(nobel) tt(uppercase)">Nº Documento</th>
-        <th class="bb(1) bc(geyser) px(30px) py(15px) ta(left) fw(600) fs(1.3rem) c(nobel) tt(uppercase)">Teléfono Fijo</th>
-        <th class="bb(1) bc(geyser) px(30px) py(15px) ta(left) fw(600) fs(1.3rem) c(nobel) tt(uppercase)">Estado</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Id</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Teléfono Móvil</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Correo Electrónico</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Nº Documento</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Teléfono Fijo</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Dirección</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Tipo de Servicio</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Tipo de Oferta</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Motivo del Cambio</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Compañía Actual</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Preferencia Horario Contacto</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Preferencia Método Contacto</th>
+        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Estado</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="bgc-hover(alabaster) t(all)" *ngFor="let lead of leads">
-        <td class="px(30px) py(15px) bb(1) bc(geyser)"><a routerLink="{{lead._id}}">{{lead._id}}</a></td>
-        <td class="px(30px) py(15px) bb(1) bc(geyser)">{{lead.mobileNumber}}</td>
-        <td class="px(30px) py(15px) bb(1) bc(geyser)">{{lead.email}}</td>
-        <td class="px(30px) py(15px) bb(1) bc(geyser)">{{lead.documentNumber}}</td>
-        <td class="px(30px) py(15px) bb(1) bc(geyser)">{{lead.fixNumber}}</td>
-        <td class="px(30px) py(15px) bb(1) bc(geyser)">{{lead.status}}</td>
+      <tr class="bg-hover(catskill-white) t(bg)" *ngFor="let lead of leads">
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)"><a class="c(science-blue) c-hover(endeavour) td(none) td-hover(underline)" routerLink="{{lead._id}}">{{lead._id}}</a></td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.mobileNumber}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.email}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.documentNumber}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.fixNumber}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.addressStreetType}} {{lead.addressStreetName}} {{lead.addressNumber}} {{lead.addressLadder}} {{lead.addressFloor}} {{lead.addressCity}} {{lead.addressProvince}} {{lead.addressPostalCode}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.serviceType}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.offerType}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.changeReason}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.currentCompany}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.preferredContactTime}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.preferredContactMethod}}</td>
+        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.status}}</td>
       </tr>
     </tbody>
   </table>
-  <div class="py-8 text-center" *ngIf="!leads?.length && !loading">
-    <p class="fs(1.6rem) c(dusty-gray)">No se ha encontrado ningún Cliente Potencial.</p>
-    <a class="button-primary mt-4" (click)="openCreateLeadModal()">Crear Cliente Potencial</a>
+  <div class="py(40px) m(auto) ta(center)" *ngIf="!leads?.length && !loading">
+    <p class="fs(1.6rem) c(kashmir-blue)">No se ha encontrado ningún Cliente Potencial.</p>
+    <a class="mt(20px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)" (click)="openCreateLeadModal()">Crear Cliente Potencial</a>
   </div>
-  <div class="py-8 text-center" *ngIf="loading">
-    <lm-icon icon="loader"></lm-icon>
+  <div class="py(40px) m(auto) ta(center)" *ngIf="loading">
+    <lm-icon class="w(40px) h(40px) fill(red)" icon="loader"></lm-icon>
   </div>
 </div>

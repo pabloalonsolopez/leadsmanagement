@@ -1,114 +1,109 @@
-<div class="lm-lead-detail-inner" *ngIf="lead">
+<div *ngIf="lead">
     <div class="d(flex) ai(center) bb(1) bc(geyser) p(20px) bg(catskill-white)">
         <div>
-            <p class="fw(600) fs(1.2rem) c(kashmir-blue) tt(uppercase) ls(0.1rem)">Cliente Potencial</p>
-            <h1 class="lh(1.25) fw(300) fs(3.2rem)">{{lead.mobileNumber ? lead.mobileNumber : lead.email}}</h1>
-            <h2 class="lh(1.25) fw(400) fs(1.6rem) c(kashmir-blue)" *ngIf="lead.mobileNumber && lead.email">{{lead.email}}</h2>
+            <p class="fs(1.2rem) c(kashmir-blue) tt(uppercase) ls(0.1rem)">Cliente Potencial</p>
+            <h1 class="lh(1.25) fw(400) fs(1.8rem)">{{lead.mobileNumber ? lead.mobileNumber : lead.email}}</h1>
         </div>
         <div class="d(flex) ai(center) ml(auto)">
-            <a class="b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(bg) t(c)">Acciones</a>
-            <a class="ml(10px) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(bg) t(c)" (click)="openEditLeadModal()">Editar</a>
-            <a class="ml(10px) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(bg) t(c)" (click)="deleteLead()">Eliminar</a>
+            <a class="d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)">Acciones</a>
+            <a class="ml(10px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)" (click)="openEditLeadModal()">Editar</a>
+            <a class="ml(10px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)" (click)="deleteLead()">Eliminar</a>
         </div>
     </div>
-    <div class="page-content py-8">
-        <div class="container-fluid">
+    <div class="row">
+        <div class="col col-6">
+            <p class="form-title pt-0">Información Cliente</p>
             <div class="row">
                 <div class="col col-6">
-                    <p class="form-title pt-0">Información Cliente</p>
-                    <div class="row">
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Teléfono Móvil</p>
-                                <p>{{lead.mobileNumber}}</p>
-                            </div>
-                        </div>
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Correo Electrónico</p>
-                                <p>{{lead.email}}</p>
-                            </div>
-                        </div>
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Nº Documento</p>
-                                <p>{{lead.documentNumber}}</p>
-                            </div>
-                        </div>
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Teléfono Fijo</p>
-                                <p>{{lead.fixNumber}}</p>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <p class="label">Teléfono Móvil</p>
+                        <p>{{lead.mobileNumber}}</p>
                     </div>
-                    <p class="form-title">Dirección</p>
-                    <div class="row">
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Dirección</p>
-                                <p>{{lead.addressStreetType}} {{lead.addressStreetName}} {{lead.addressNumber}} {{lead.addressLadder}} {{lead.addressFloor}}</p>
-                                <p>{{lead.addressCity}} {{lead.addressProvince}} {{lead.addressPostalCode}}</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="col col-6">
+                    <div class="form-group">
+                        <p class="label">Correo Electrónico</p>
+                        <p>{{lead.email}}</p>
                     </div>
-                    <p class="form-title">Información Comercial</p>
-                    <div class="row">
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Tipo de Servicio</p>
-                                <p>{{lead.serviceType}}</p>
-                            </div>
-                        </div>
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Tipo de Oferta</p>
-                                <p>{{lead.offerType}}</p>
-                            </div>
-                        </div>
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Motivo del Cambio</p>
-                                <p>{{lead.changeReason}}</p>
-                            </div>
-                        </div>
-                        <div class="col col-6">
-                            <div class="form-group">
-                                <p class="label">Compañía Actual</p>
-                                <p>{{lead.currentCompany}}</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="col col-6">
+                    <div class="form-group">
+                        <p class="label">Nº Documento</p>
+                        <p>{{lead.documentNumber}}</p>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <p class="label">Preferencia Horario Contacto</p>
-                                <p>{{lead.preferredContactTime}}</p>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <p class="label">Preferencia Método Contacto</p>
-                                <p>{{lead.preferredContactMethod}}</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="col col-6">
+                    <div class="form-group">
+                        <p class="label">Teléfono Fijo</p>
+                        <p>{{lead.fixNumber}}</p>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <p class="label">Comentarios</p>
-                                <p>{{lead.comments}}</p>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <p class="form-title">Dirección</p>
+            <div class="row">
+                <div class="col col-6">
+                    <div class="form-group">
+                        <p class="label">Dirección</p>
+                        <p>{{lead.addressStreetType}} {{lead.addressStreetName}} {{lead.addressNumber}} {{lead.addressLadder}} {{lead.addressFloor}}</p>
+                        <p>{{lead.addressCity}} {{lead.addressProvince}} {{lead.addressPostalCode}}</p>
                     </div>
-                    <p class="form-title">Información de Sistema</p>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <p class="label">Estado</p>
-                                <p>{{lead.status}}</p>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <p class="form-title">Información Comercial</p>
+            <div class="row">
+                <div class="col col-6">
+                    <div class="form-group">
+                        <p class="label">Tipo de Servicio</p>
+                        <p>{{lead.serviceType}}</p>
+                    </div>
+                </div>
+                <div class="col col-6">
+                    <div class="form-group">
+                        <p class="label">Tipo de Oferta</p>
+                        <p>{{lead.offerType}}</p>
+                    </div>
+                </div>
+                <div class="col col-6">
+                    <div class="form-group">
+                        <p class="label">Motivo del Cambio</p>
+                        <p>{{lead.changeReason}}</p>
+                    </div>
+                </div>
+                <div class="col col-6">
+                    <div class="form-group">
+                        <p class="label">Compañía Actual</p>
+                        <p>{{lead.currentCompany}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <p class="label">Preferencia Horario Contacto</p>
+                        <p>{{lead.preferredContactTime}}</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <p class="label">Preferencia Método Contacto</p>
+                        <p>{{lead.preferredContactMethod}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <p class="label">Comentarios</p>
+                        <p>{{lead.comments}}</p>
+                    </div>
+                </div>
+            </div>
+            <p class="form-title">Información de Sistema</p>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <p class="label">Estado</p>
+                        <p>{{lead.status}}</p>
                     </div>
                 </div>
             </div>

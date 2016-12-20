@@ -18,6 +18,7 @@ export class LeadsListComponent implements OnInit {
   leads: Lead[]
   error: any
   loading: boolean = false
+  lastUpdate: string 
 
   constructor(private router: Router, private modalService: ModalService, private leadsService: LeadsService) {}
 
@@ -28,6 +29,8 @@ export class LeadsListComponent implements OnInit {
         leads => {
           this.leads = leads
           this.loading = false
+          const now = new Date()
+          this.lastUpdate = now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() + " a las " + now.getHours() + ":" + now.getMinutes()
         },
         error => this.error = error
       )

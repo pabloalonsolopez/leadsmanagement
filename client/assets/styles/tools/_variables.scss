@@ -1,6 +1,6 @@
 $transitions: (
   bg: (background-color .15s ease-in),
-  color: (color .15s ease-in),
+  c: (color .15s ease-in),
   fill: (fill .15s ease-in)
 );
 
@@ -10,12 +10,21 @@ $breakpoints: (
   md: 60em
 );
 
+$border-collapse: (
+  collapse: collapse
+);
+
 $border-radiuses: (
   4px: 4px
 );
 
 $borders: (
-  1: (1px solid)
+  1: (1px solid),
+  3: (3px solid)
+);
+
+$box-shadows: (
+  modal: (0 0 10px 0 rgba(0, 0, 0, 0.9))
 );
 
 $colors: (
@@ -32,16 +41,33 @@ $colors: (
   white-30: rgba(255, 255, 255, .3)
 );
 
+$coordinates: (
+  0: 0
+);
+
 $cursors: (
   pointer: pointer
 );
 
 $displays: (
-  flex: flex
+  flex: flex,
+  inline-block: inline-block
 );
 
 $flex-alignments: (
   center: center
+);
+
+$flex: (
+  1: 1
+);
+
+$flex-directions: (
+  column: column
+);
+
+$flex-wrap: (
+  wrap: wrap
 );
 
 $font-families: (
@@ -54,7 +80,7 @@ $font-sizes: (
   1.3rem: 1.3rem,
   1.4rem: 1.4rem,
   1.6rem: 1.6rem,
-  3.2rem: 3.2rem
+  1.8rem: 1.8rem
 );
 
 $font-weights: (
@@ -63,13 +89,10 @@ $font-weights: (
   600: 600
 );
 
-$widths: (
-  24px: 24px
-);
-
 $heights: (
   100%: 100%,
-  24px: 24px
+  24px: 24px,
+  40px: 40px
 );
 
 $letter-spacings: (
@@ -82,6 +105,19 @@ $line-heights: (
   1.5: 1.5
 );
 
+$opacities: (
+  0.9: 0.9
+);
+
+$overflows: (
+  auto: auto
+);
+
+$positions: (
+  absolute: absolute,
+  fixed: fixed
+);
+
 $spacings: (
   auto: auto,
   5px: 5px,
@@ -89,6 +125,11 @@ $spacings: (
   20px: 20px,
   30px: 30px,
   40px: 40px
+);
+
+$text-alignments: (
+  left: left,
+  center: center
 );
 
 $text-decorations: (
@@ -100,31 +141,62 @@ $text-transformations: (
   uppercase: uppercase
 );
 
+$widths: (
+  100%: 100%,
+  24px: 24px,
+  40px: 40px,
+  1000px: 1000px
+);
+
+$white-space: (
+  nowrap: nowrap
+);
+
 $dictionary: (
- (ai,   align-items,                        $flex-alignments,       null,                 null),
- (bra,  border-radius,                      $border-radiuses,       null,                 null),
- (b,    border,                             $borders,               null,                 null),
- (bb,   border-bottom,                      $borders,               null,                 null),
- (br,   border-right,                       $borders,               null,                 null),
- (bc,   border-color,                       $colors,                (hover),              null),
- (bg,   background-color,                   $colors,                (hover),              null),
- (c,    color,                              $colors,                (hover, is-active),   null),
- (cu,   cursor,                             $cursors,               null,                 null),
- (d,    display,                            $displays,              null,                 null),
- (fill, fill,                               $colors,                (hover),              null),
- (ff,   font-family,                        $font-families,         null,                 null),
- (fs,   font-size,                          $font-sizes,            null,                 null),
- (fw,   font-weight,                        $font-weights,          null,                 null),
- (h,    height,                             $heights,               null,                 null),
- (ls,   letter-spacing,                     $letter-spacings,       null,                 null),
- (lh,   line-height,                        $line-heights,          null,                 null),
- (ml,   margin-left,                        $spacings,              null,                 null),
- (p,    padding,                            $spacings,              null,                 null),
- (pr,   padding-right,                      $spacings,              null,                 null),
- (px,   (padding-left, padding-right),      $spacings,              null,                 null),
- (py,   (padding-top, padding-bottom),      $spacings,              null,                 null),
- (t,    transition,                         $transitions,           null,                 null),
- (td,   text-decoration,                    $text-decorations,      null,                 null),
- (tt,   text-transform,                     $text-transformations,  null,                 null),
- (w,    width,                              $widths,                null,                 null)
+ (ai,     align-items,                        $flex-alignments,       null,                 null),
+ (bra,    border-radius,                      $border-radiuses,       null,                 null),
+ (btra,   (border-top-left-radius,border-top-right-radius),                      $border-radiuses,       null,                 null),
+ (b,      border,                             $borders,               null,                 null),
+ (bb,     border-bottom,                      $borders,               (hover, is-active),   null),
+ (bl,     border-left,                        $borders,               (hover, is-active),   null),
+ (br,     border-right,                       $borders,               (hover, is-active),   null),
+ (bc,     border-color,                       $colors,                (hover, is-active),   null),
+ (bco,    border-collapse,                    $border-collapse,       null,                 null),
+ (bg,     background-color,                   $colors,                (hover, is-active),   null),
+ (bottom, bottom,                             $coordinates,           null,                 null),
+ (boxs,   box-shadow,                         $box-shadows,           null,                 null),
+ (c,      color,                              $colors,                (hover, is-active),   null),
+ (cu,     cursor,                             $cursors,               null,                 null),
+ (d,      display,                            $displays,              null,                 null),
+ (fill,   fill,                               $colors,                (hover),              null),
+ (flex,   flex,                               $flex,                  null,                 null),
+ (fd,     flex-direction,                     $flex-directions,       null,                 null),
+ (ff,     font-family,                        $font-families,         null,                 null),
+ (fs,     font-size,                          $font-sizes,            null,                 null),
+ (fw,     font-weight,                        $font-weights,          null,                 null),
+ (flexw,  flex-wrap,                          $flex-wrap,             null,                 null),
+ (h,      height,                             $heights,               null,                 null),
+ (left,   left,                               $coordinates,           null,                 null),
+ (ls,     letter-spacing,                     $letter-spacings,       null,                 null),
+ (lh,     line-height,                        $line-heights,          null,                 null),
+ (m,      margin,                             $spacings,              null,                 null),
+ (mb,     margin-bottom,                      $spacings,              null,                 null),
+ (ml,     margin-left,                        $spacings,              null,                 null),
+ (mt,     margin-top,                         $spacings,              null,                 null),
+ (o,      opacity,                            $opacities,             null,                 null),
+ (ov,     overflow,                           $overflows,             null,                 null),
+ (p,      padding,                            $spacings,              null,                 null),
+ (pr,     padding-right,                      $spacings,              null,                 null),
+ (pt,     padding-top,                        $spacings,              null,                 null),
+ (px,     (padding-left, padding-right),      $spacings,              null,                 null),
+ (py,     (padding-top, padding-bottom),      $spacings,              null,                 null),
+ (pos,    position,                           $positions,             null,                 null),
+ (right,  right,                              $coordinates,           null,                 null),
+ (t,      transition,                         $transitions,           null,                 null),
+ (ta,     text-align,                         $text-alignments,       null,                 null),
+ (td,     text-decoration,                    $text-decorations,      (hover),              null),
+ (tt,     text-transform,                     $text-transformations,  null,                 null),
+ (top,    top,                                $coordinates,           null,                 null),
+ (w,      width,                              $widths,                null,                 null),
+ (ws,     white-space,                        $white-space,           null,                 null)
 );
