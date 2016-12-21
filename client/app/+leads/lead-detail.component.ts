@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { ActivatedRoute, Params, Router } from "@angular/router"
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'
 
 import { ModalService } from "../core/modal/modal.service"
 import { SharedModule } from "../shared/shared.module"
@@ -20,7 +21,7 @@ export class LeadDetailComponent implements OnInit {
   lead: Lead
   error: any
 
-  constructor(private route: ActivatedRoute, private router: Router, private modalService: ModalService, private leadsService: LeadsService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private modalService: ModalService, private leadsService: LeadsService, private domSanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -57,6 +58,21 @@ export class LeadDetailComponent implements OnInit {
         }
       }
     })
+  }
+
+  getGoogleMapsUrl(): SafeResourceUrl {
+    let url = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDYb5mXvh4rpkhGS_KMZmXeHS-GLm3AT2c&language=es&q="
+    url += this.lead.addressStreetType + " "
+    url += this.lead.addressStreetName + " "
+    url += this.lead.addressNumber + " "
+    url += this.lead.addressDoorway + " "
+    url += this.lead.addressLadder + " "
+    url += this.lead.addressFloor + " "
+    url += this.lead.addressDoor + " "
+    url += this.lead.addressCity + " "
+    url += this.lead.addressProvince + " "
+    url += this.lead.addressCountry
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(url)
   }
 
 }

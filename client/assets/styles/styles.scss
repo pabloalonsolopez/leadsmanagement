@@ -20,14 +20,99 @@ lm-icon > svg {
   vertical-align: middle;
 }
 
-lm-leads {
+lm-leads, lm-leads-list, lm-lead-detail {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-lm-leads-list {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  border-bottom: 1px solid map-get($colors, geyser);
+  padding: 10px 20px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: map-get($colors, kashmir-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+}
+
+tbody {
+  tr {
+    &:hover {
+      background-color: map-get($colors, catskill-white);
+      transition: background-color .15s ease-in;
+    }
+  }
+}
+
+td {
+  border-bottom: 1px solid map-get($colors, geyser);
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+iframe {
+  width: 100%;
+  height: auto;
+  border: none;
+  pointer-events: none;
+}
+
+.label {
+  display: block;
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+  color: map-get($colors, kashmir-blue);
+}
+
+textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid map-get($colors, geyser);
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-family: inherit;
+  color: map-get($colors, biscay);
+  outline: 0;
+  &::placeholder {
+    color: map-get($colors, bali-hai);
+  }
+  &.ng-invalid.ng-dirty {
+    border-color: map-get($colors, red);
+  }
+}
+
+.form-control-readonly {
+  min-height: 27px;
+  border-bottom: 1px solid map-get($colors, geyser);
+  padding-bottom: 5px;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid map-get($colors, geyser);
+  border-radius: 4px;
+  padding: 0 20px;
+  background-color: map-get($colors, white);
+  line-height: 31px;
+  font-family: inherit;
+  font-size: 1.3rem;
+  color: map-get($colors, science-blue);
+  transition: all .15s ease-in;
+  cursor: pointer;
+  &:hover {
+    background-color: map-get($colors, catskill-white);
+    color: map-get($colors, endeavour);
+  }
 }

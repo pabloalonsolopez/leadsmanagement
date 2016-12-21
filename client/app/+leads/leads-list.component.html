@@ -1,49 +1,49 @@
 <div class="d(flex) ai(center) bb(1) bc(geyser) p(20px) bg(catskill-white)">
     <div>
         <p class="fs(1.2rem) c(kashmir-blue) tt(uppercase) ls(0.1rem)">Clientes Potenciales</p>
-        <h1 class="lh(1.25) fw(400) fs(1.8rem)">Todos los Clientes Potenciales</h1>
+        <h1 class="lh(1.25) fw(400) fs(2rem)">Todos los Clientes Potenciales</h1>
         <p class="pt(10px) fs(1.2rem) c(kashmir-blue)">{{leads?.length}} elemento<span *ngIf="leads?.length != 1">s</span> &middot; Última actualización {{lastUpdate}}</p>
     </div>
     <div class="d(flex) ai(center) ml(auto)">
-      <a class="d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)" (click)="openCreateLeadModal()">Nuevo</a>
-      <a class="ml(10px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)">Importar</a>
-      <a class="ml(10px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)">Exportar</a>
+      <a class="button" (click)="openCreateLeadModal()">Nuevo</a>
+      <a class="ml(10px) button">Importar</a>
+      <a class="ml(10px) button">Exportar</a>
     </div>
 </div>
-<div class="d(flex) flex(1) ov(auto)">
-  <table class="w(100%) bco(collapse)" *ngIf="leads?.length && !loading">
+<div class="d(flex) fd(column) flex(1) ov(auto)">
+  <table *ngIf="leads?.length && !loading">
     <thead>
       <tr>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Id</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Teléfono Móvil</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Correo Electrónico</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Nº Documento</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Teléfono Fijo</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Dirección</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Tipo de Servicio</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Tipo de Oferta</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Motivo del Cambio</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Compañía Actual</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Preferencia Horario Contacto</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Preferencia Método Contacto</th>
-        <th class="bb(1) bc(geyser) px(20px) py(10px) ta(left) fw(400) fs(1.3rem) c(kashmir-blue) tt(uppercase) ls(0.1rem) ws(nowrap)">Estado</th>
+        <th>Id</th>
+        <th>Teléfono Móvil</th>
+        <th>Correo Electrónico</th>
+        <th>Nº Documento</th>
+        <th>Teléfono Fijo</th>
+        <th>Dirección</th>
+        <th>Tipo de Servicio</th>
+        <th>Tipo de Oferta</th>
+        <th>Motivo del Cambio</th>
+        <th>Compañía Actual</th>
+        <th>Preferencia Horario Contacto</th>
+        <th>Preferencia Método Contacto</th>
+        <th>Estado</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="bg-hover(catskill-white) t(bg)" *ngFor="let lead of leads">
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)"><a class="c(science-blue) c-hover(endeavour) td(none) td-hover(underline)" routerLink="{{lead._id}}">{{lead._id}}</a></td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.mobileNumber}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.email}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.documentNumber}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.fixNumber}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.addressStreetType}} {{lead.addressStreetName}} {{lead.addressNumber}} {{lead.addressLadder}} {{lead.addressFloor}} {{lead.addressCity}} {{lead.addressProvince}} {{lead.addressPostalCode}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.serviceType}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.offerType}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.changeReason}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.currentCompany}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.preferredContactTime}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.preferredContactMethod}}</td>
-        <td class="px(20px) py(10px) bb(1) bc(geyser) ws(nowrap)">{{lead.status}}</td>
+      <tr *ngFor="let lead of leads">
+        <td><a class="c(science-blue) c-hover(endeavour) td(none) td-hover(underline) t(c)" routerLink="{{lead._id}}">{{lead._id}}</a></td>
+        <td>{{lead.mobileNumber}}</td>
+        <td>{{lead.email}}</td>
+        <td>{{lead.documentNumber}}</td>
+        <td>{{lead.fixNumber}}</td>
+        <td>{{lead.addressStreetType}} {{lead.addressStreetName}} {{lead.addressNumber}} {{lead.addressDoorway}} {{lead.addressLadder}} {{lead.addressFloor}} {{lead.addressDoor}} {{lead.addressCity}} {{lead.addressProvince}} {{lead.addressPostalCode}} {{lead.addressCountry}}</td>
+        <td>{{lead.serviceType}}</td>
+        <td>{{lead.offerType}}</td>
+        <td>{{lead.changeReason}}</td>
+        <td>{{lead.currentCompany}}</td>
+        <td>{{lead.preferredContactTime}}</td>
+        <td>{{lead.preferredContactMethod}}</td>
+        <td>{{lead.status}}</td>
       </tr>
     </tbody>
   </table>

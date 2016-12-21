@@ -26,6 +26,7 @@ export class LeadsService {
   }
 
   createLead(lead: Lead): Observable<Lead> {
+    lead.status = "Abierto"
     return this.http.post(this.leadsUrl, JSON.stringify(lead), this.options)
       .map(this.extractData)
       .catch(this.handleError)

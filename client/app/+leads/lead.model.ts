@@ -7,11 +7,14 @@ export class Lead {
   addressStreetType: string
   addressStreetName: string
   addressNumber: string
+  addressDoorway: string
   addressLadder: string
   addressFloor: string
+  addressDoor: string
   addressCity: string
   addressProvince: string
   addressPostalCode: string
+  addressCountry: string
   serviceType: string
   offerType: string
   changeReason: string
@@ -21,3 +24,4 @@ export class Lead {
   comments: string
   status: string
 }
+

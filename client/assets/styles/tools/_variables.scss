@@ -35,6 +35,7 @@ $colors: (
   endeavour: #005FB2,
   biscay: #16325C,
   kashmir-blue: #54698D,
+  bali-hai: #8798B3,
   geyser: #D8DDE6,
   catskill-white: #F7F9FB,
   white: #FFFFFF,
@@ -52,7 +53,8 @@ $cursors: (
 
 $displays: (
   flex: flex,
-  inline-block: inline-block
+  inline-block: inline-block,
+  block: block
 );
 
 $flex-alignments: (
@@ -60,7 +62,8 @@ $flex-alignments: (
 );
 
 $flex: (
-  1: 1
+  1: 1,
+  0: 0 0 auto
 );
 
 $flex-directions: (
@@ -81,7 +84,7 @@ $font-sizes: (
   1.3rem: 1.3rem,
   1.4rem: 1.4rem,
   1.6rem: 1.6rem,
-  1.8rem: 1.8rem
+  2rem: 2rem
 );
 
 $font-weights: (
@@ -106,8 +109,16 @@ $line-heights: (
   1.5: 1.5
 );
 
+$min-heights: (
+  min-content: min-content
+);
+
 $opacities: (
   0.9: 0.9
+);
+
+$outlines: (
+  0: 0
 );
 
 $overflows: (
@@ -121,6 +132,7 @@ $positions: (
 
 $spacings: (
   auto: auto,
+  -1px: -1px,
   5px: 5px,
   10px: 10px,
   20px: 20px,
@@ -130,7 +142,8 @@ $spacings: (
 
 $text-alignments: (
   left: left,
-  center: center
+  center: center,
+  right: right
 );
 
 $text-decorations: (
@@ -147,6 +160,7 @@ $widths: (
   33.33%: 33.33%,
   66.66%: 66.66%,
   50%: 50%,
+  75%: 75%,
   100%: 100%,
   24px: 24px,
   40px: 40px,
@@ -172,7 +186,7 @@ $dictionary: (
  (bg,     background-color,                   $colors,                (hover, is-active),   null),
  (bottom, bottom,                             $coordinates,           null,                 null),
  (boxs,   box-shadow,                         $box-shadows,           null,                 null),
- (c,      color,                              $colors,                (hover, is-active),   null),
+ (c,      color,                              $colors,                (hover, is-active, placeholder),   null),
  (cu,     cursor,                             $cursors,               null,                 null),
  (d,      display,                            $displays,              null,                 null),
  (fill,   fill,                               $colors,                (hover),              null),
@@ -183,6 +197,7 @@ $dictionary: (
  (fw,     font-weight,                        $font-weights,          null,                 null),
  (flexw,  flex-wrap,                          $flex-wrap,             null,                 null),
  (h,      height,                             $heights,               null,                 null),
+ (jc,     justify-content,                    $flex-alignments,       null,                 null),
  (left,   left,                               $coordinates,           null,                 null),
  (ls,     letter-spacing,                     $letter-spacings,       null,                 null),
  (lh,     line-height,                        $line-heights,          null,                 null),
@@ -190,9 +205,13 @@ $dictionary: (
  (mb,     margin-bottom,                      $spacings,              null,                 null),
  (ml,     margin-left,                        $spacings,              null,                 null),
  (mt,     margin-top,                         $spacings,              null,                 null),
+ (minh,   min-height,                         $min-heights,           null,                 null),
  (o,      opacity,                            $opacities,             null,                 null),
+ (ou,     outline,                            $outlines,              null,                 null),
  (ov,     overflow,                           $overflows,             null,                 null),
  (p,      padding,                            $spacings,              null,                 null),
+ (pb,     padding-bottom,                     $spacings,              null,                 null),
+ (pl,     padding-left,                       $spacings,              null,                 null),
  (pr,     padding-right,                      $spacings,              null,                 null),
  (pt,     padding-top,                        $spacings,              null,                 null),
  (px,     (padding-left, padding-right),      $spacings,              null,                 null),

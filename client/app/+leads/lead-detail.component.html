@@ -1,111 +1,159 @@
-<div *ngIf="lead">
+<div class="d(flex) fd(column) flex(1)" *ngIf="lead">
     <div class="d(flex) ai(center) bb(1) bc(geyser) p(20px) bg(catskill-white)">
         <div>
             <p class="fs(1.2rem) c(kashmir-blue) tt(uppercase) ls(0.1rem)">Cliente Potencial</p>
-            <h1 class="lh(1.25) fw(400) fs(1.8rem)">{{lead.mobileNumber ? lead.mobileNumber : lead.email}}</h1>
+            <h1 class="lh(1.25) fw(400) fs(2rem)">{{lead.mobileNumber ? lead.mobileNumber : lead.email}}</h1>
         </div>
         <div class="d(flex) ai(center) ml(auto)">
-            <a class="d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)">Acciones</a>
-            <a class="ml(10px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)" (click)="openEditLeadModal()">Editar</a>
-            <a class="ml(10px) d(inline-block) b(1) bra(4px) bc(geyser) px(20px) py(5px) bg(white) bg-hover(catskill-white) fs(1.3rem) c(science-blue) c-hover(endeavour) cu(pointer) t(all) cu(pointer)" (click)="deleteLead()">Eliminar</a>
+            <a class="button">Acciones</a>
+            <a class="ml(10px) button" (click)="openEditLeadModal()">Modificar</a>
+            <a class="ml(10px) button" (click)="deleteLead()">Eliminar</a>
         </div>
     </div>
-    <div class="row">
-        <div class="col col-6">
-            <p class="form-title pt-0">Información Cliente</p>
-            <div class="row">
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Teléfono Móvil</p>
-                        <p>{{lead.mobileNumber}}</p>
+    <div class="d(flex) ov(auto)">
+        <div class="w(66.66%) p(10px) minh(min-content)">
+            <div class="p(10px)">
+                <div class="bb(1) bc(geyser)">
+                    <p class="d(inline-block) mb(-1px) bb(1) bc(red) px(20px) pb(10px) fw(600) c(biscay) tt(uppercase) ls(0.1rem)">Detalles</p>
+                </div>
+            </div>
+            <div class="d(flex) flexw(wrap)">
+                <div class="w(50%) p(10px)">
+                    <p class="label">Teléfono Móvil</p>
+                    <p class="form-control-readonly">{{lead.mobileNumber}}</p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Correo Electrónico</p>
+                    <p class="form-control-readonly"><a class="c(science-blue) c-hover(endeavour) td(none) td-hover(underline) t(c)" href="mailto:{{lead.email}}">{{lead.email}}</a></p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Nº Documento</p>
+                    <p class="form-control-readonly">{{lead.documentNumber}}</p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Teléfono Fijo</p>
+                    <p class="form-control-readonly">{{lead.fixNumber}}</p>
+                </div>
+                <div class="w(100%) p(10px)">
+                    <p class="px(10px) py(5px) bg(catskill-white) fw(600)">Información de dirección</p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Dirección</p>
+                    <div class="form-control-readonly">
+                        <a class="c(science-blue) c-hover(endeavour) td(none) td-hover(underline) t(c)" href="https://www.google.com/maps/?q={{lead.addressStreetType}} {{lead.addressStreetName}} {{lead.addressNumber}} {{lead.addressDoorway}} {{lead.addressLadder}} {{lead.addressFloor}} {{lead.addressDoor}} {{lead.addressCity}} {{lead.addressProvince}} {{lead.addressPostalCode}} {{lead.addressCountry}}" target="_blank">
+                            {{lead.addressStreetType}} {{lead.addressStreetName}}, {{lead.addressNumber}}, {{lead.addressDoorway}}, {{lead.addressLadder}}, {{lead.addressFloor}}, {{lead.addressDoor}}<br>
+                            {{lead.addressCity}}, {{lead.addressProvince}} {{lead.addressPostalCode}} {{lead.addressCountry}}
+                            <iframe class="mt(5px)" [attr.src]="getGoogleMapsUrl()" scrolling="no"></iframe>
+                        </a>
                     </div>
                 </div>
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Correo Electrónico</p>
-                        <p>{{lead.email}}</p>
-                    </div>
+                <div class="w(100%) p(10px)">
+                    <p class="px(10px) py(5px) bg(catskill-white) fw(600)">Información comercial</p>
                 </div>
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Nº Documento</p>
-                        <p>{{lead.documentNumber}}</p>
-                    </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Tipo de Servicio</p>
+                    <p class="form-control-readonly">{{lead.serviceType}}</p>
                 </div>
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Teléfono Fijo</p>
-                        <p>{{lead.fixNumber}}</p>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Tipo de Oferta</p>
+                    <p class="form-control-readonly">{{lead.offerType}}</p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Motivo del Cambio</p>
+                    <p class="form-control-readonly">{{lead.changeReason}}</p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Compañía Actual</p>
+                    <p class="form-control-readonly">{{lead.currentCompany}}</p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Preferencia Horario Contacto</p>
+                    <p class="form-control-readonly">{{lead.preferredContactTime}}</p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Preferencia Método Contacto</p>
+                    <p class="form-control-readonly">{{lead.preferredContactMethod}}</p>
+                </div>
+                <div class="w(50%) p(10px)">
+                    <p class="label">Comentarios</p>
+                    <p class="form-control-readonly">{{lead.comments}}</p>
+                </div>
+                <div class="w(100%) p(10px)">
+                    <p class="px(10px) py(5px) bg(catskill-white) fw(600)">Información del sistema</p>
+                </div>
+                <div class="w(33.33%) p(10px)" style="margin-right: 66.66%">
+                    <p class="label">Estado</p>
+                    <p class="form-control-readonly">{{lead.status}}</p>
+                </div>
+                <div class="w(33.33%) p(10px)">
+                    <p class="label">Canal Creador</p>
+                    <p class="form-control-readonly"></p>
+                </div>
+                <div class="w(33.33%) p(10px)">
+                    <p class="label">Perfil Creador</p>
+                    <p class="form-control-readonly"></p>
+                </div>
+                <div class="w(33.33%) p(10px)">
+                    <p class="label">SFID Creador</p>
+                    <p class="form-control-readonly"></p>
+                </div>
+                <div class="w(33.33%) p(10px)">
+                    <p class="label">Canal Última Modificación</p>
+                    <p class="form-control-readonly"></p>
+                </div>
+                <div class="w(33.33%) p(10px)">
+                    <p class="label">Perfil Última Modificación</p>
+                    <p class="form-control-readonly"></p>
+                </div>
+                <div class="w(33.33%) p(10px)">
+                    <p class="label">SFID Última Modificación</p>
+                    <p class="form-control-readonly"></p>
+                </div>
+            </div>
+        </div>
+        <div class="w(33.33%) p(10px)">
+            <div class="p(10px)">
+                <div class="bb(1) bc(geyser)">
+                    <p class="d(inline-block) mb(-1px) bb(1) bc(red) px(20px) pb(10px) fw(600) c(biscay) tt(uppercase) ls(0.1rem)">Actividad</p>
+                </div>
+            </div>
+            <div class="p(10px) ta(right)">
+                <a class="button" (click)="deleteLead()">Añadir actividad</a>
+            </div>
+            <div class="p(10px)">
+                <div class="b(1) bc(geyser) bra(4px) p(10px)">
+                    <div class="p(10px)">
+                        <label class="label" for="preferredContactMethod">Asunto</label>
+                        <input class="form-control" type="text" id="addressStreetType" placeholder="Asunto"/>
+                    </div>
+                    <div class="p(10px)">
+                        <label class="label" for="preferredContactMethod">Comentarios</label>
+                        <textarea class="form-control" type="text" id="addressStreetType" placeholder="Comentarios"></textarea>
+                    </div>
+                    <div class="p(10px) ta(right)">
+                        <input class="button" type="submit" value="Guardar"/>
+                        <a class="ml(10px) button" (click)="deleteLead()">Cancelar</a>
                     </div>
                 </div>
             </div>
-            <p class="form-title">Dirección</p>
-            <div class="row">
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Dirección</p>
-                        <p>{{lead.addressStreetType}} {{lead.addressStreetName}} {{lead.addressNumber}} {{lead.addressLadder}} {{lead.addressFloor}}</p>
-                        <p>{{lead.addressCity}} {{lead.addressProvince}} {{lead.addressPostalCode}}</p>
+            <div class="p(10px)">
+                <div class="d(flex)">
+                    <div>
+                        <p>Contacto por teléfono</p>
+                        <p class="fs(1.3rem) c(kashmir-blue)">Lo llamé ayer por teléfono. Parecía interesado en la oferta de televisión, es probable que lo llame de nuevo mañana para insistir otra vez.</p>
                     </div>
+                    <div class="flex(0) pl(20px) fs(1.2rem) c(kashmir-blue) ml(auto)">21-Dic</div>
+                </div>
+                <div class="d(flex) mt(20px)">
+                    <div>
+                        <p>Contacto por teléfono de manera insistente</p>
+                        <p class="fs(1.3rem) c(kashmir-blue)">Tras múltiples intentos no hay manera de contactar con el.</p>
+                    </div>
+                    <div class="flex(0) pl(20px) fs(1.2rem) c(kashmir-blue) ml(auto)">20-Dic</div>
                 </div>
             </div>
-            <p class="form-title">Información Comercial</p>
-            <div class="row">
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Tipo de Servicio</p>
-                        <p>{{lead.serviceType}}</p>
-                    </div>
-                </div>
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Tipo de Oferta</p>
-                        <p>{{lead.offerType}}</p>
-                    </div>
-                </div>
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Motivo del Cambio</p>
-                        <p>{{lead.changeReason}}</p>
-                    </div>
-                </div>
-                <div class="col col-6">
-                    <div class="form-group">
-                        <p class="label">Compañía Actual</p>
-                        <p>{{lead.currentCompany}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <p class="label">Preferencia Horario Contacto</p>
-                        <p>{{lead.preferredContactTime}}</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <p class="label">Preferencia Método Contacto</p>
-                        <p>{{lead.preferredContactMethod}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <p class="label">Comentarios</p>
-                        <p>{{lead.comments}}</p>
-                    </div>
-                </div>
-            </div>
-            <p class="form-title">Información de Sistema</p>
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group">
-                        <p class="label">Estado</p>
-                        <p>{{lead.status}}</p>
-                    </div>
-                </div>
+            <div class="p(10px) ta(right)">
+                <a class="button" (click)="deleteLead()">Más actividad anterior</a>
             </div>
         </div>
     </div>
