@@ -1,0 +1,12 @@
+<div class="p(10px)">
+    <div class="d(flex)" *ngFor="let activity of activities">
+        <div>
+            <p>{{activity.subject}}</p>
+            <p class="fs(1.3rem) c(kashmir-blue)">{{activity.comments}}</p>
+        </div>
+        <div class="flex(0) pl(20px) fs(1.2rem) c(kashmir-blue) ml(auto)">{{getCreated(activity)}}</div>
+    </div>
+</div>
+<div class="p(10px) ta(right)">
+    <a class="button" >Más actividad anterior</a>
+</div>

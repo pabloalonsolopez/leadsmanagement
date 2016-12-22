@@ -74,10 +74,6 @@
                     <p class="label">Preferencia Método Contacto</p>
                     <p class="form-control-readonly">{{lead.preferredContactMethod}}</p>
                 </div>
-                <div class="w(50%) p(10px)">
-                    <p class="label">Comentarios</p>
-                    <p class="form-control-readonly">{{lead.comments}}</p>
-                </div>
                 <div class="w(100%) p(10px)">
                     <p class="px(10px) py(5px) bg(catskill-white) fw(600)">Información del sistema</p>
                 </div>
@@ -117,24 +113,11 @@
                     <p class="d(inline-block) mb(-1px) bb(1) bc(red) px(20px) pb(10px) fw(600) c(biscay) tt(uppercase) ls(0.1rem)">Actividad</p>
                 </div>
             </div>
+            <lm-lead-activity-new [lead]="lead"></lm-lead-activity-new>
+            <lm-activities-list [activities]="lead.activities"></lm-activities-list>
+            <!--
             <div class="p(10px) ta(right)">
                 <a class="button" (click)="deleteLead()">Añadir actividad</a>
-            </div>
-            <div class="p(10px)">
-                <div class="b(1) bc(geyser) bra(4px) p(10px)">
-                    <div class="p(10px)">
-                        <label class="label" for="preferredContactMethod">Asunto</label>
-                        <input class="form-control" type="text" id="addressStreetType" placeholder="Asunto"/>
-                    </div>
-                    <div class="p(10px)">
-                        <label class="label" for="preferredContactMethod">Comentarios</label>
-                        <textarea class="form-control" type="text" id="addressStreetType" placeholder="Comentarios"></textarea>
-                    </div>
-                    <div class="p(10px) ta(right)">
-                        <input class="button" type="submit" value="Guardar"/>
-                        <a class="ml(10px) button" (click)="deleteLead()">Cancelar</a>
-                    </div>
-                </div>
             </div>
             <div class="p(10px)">
                 <div class="d(flex)">
@@ -154,7 +137,7 @@
             </div>
             <div class="p(10px) ta(right)">
                 <a class="button" (click)="deleteLead()">Más actividad anterior</a>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>

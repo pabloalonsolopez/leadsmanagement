@@ -22,7 +22,6 @@ const LeadSchema = new Schema({
   currentCompany: String,
   preferredContactTime: String,
   preferredContactMethod: String,
-  comments: String,
   status: String
 })
 

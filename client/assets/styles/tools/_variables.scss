@@ -223,6 +223,6 @@ $dictionary: (
  (td,     text-decoration,                    $text-decorations,      (hover),              null),
  (tt,     text-transform,                     $text-transformations,  null,                 null),
  (top,    top,                                $coordinates,           null,                 null),
- (w,      width,                              $widths,                null,                 null),
+ (w,      width,                              $widths,                null,                 (xs, sm, md)),
  (ws,     white-space,                        $white-space,           null,                 null)
 );

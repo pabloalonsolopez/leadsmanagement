@@ -9,7 +9,9 @@ import * as dotenv from "dotenv"
 dotenv.config({ path: path.join(__dirname, "config", ".env") })
 
 import "./models/lead"
+import "./models/activity"
 
+import { ActivitiesRouter } from "./routes/activities"
 import { LeadsRouter } from "./routes/leads"
 import { IndexRouter } from "./routes/index"
 
@@ -24,6 +26,7 @@ app.use(logger("dev"))
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: true }))
 
+app.use("/api/activities", ActivitiesRouter)
 app.use("/api/leads", LeadsRouter)
 
 if (app.get("env") === "production") {

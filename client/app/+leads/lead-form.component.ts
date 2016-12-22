@@ -39,7 +39,6 @@ export class LeadFormComponent implements OnInit {
     'currentCompany': '',
     'preferredContactTime': '',
     'preferredContactMethod': '',
-    'comments': '',
     'status': ''
   }
   validationMessages: any = {
@@ -87,7 +86,6 @@ export class LeadFormComponent implements OnInit {
       'currentCompany': [this.lead.currentCompany, Validators.required],
       'preferredContactTime': [this.lead.preferredContactTime],
       'preferredContactMethod': [this.lead.preferredContactMethod],
-      'comments': [this.lead.comments],
       'status': [this.lead.status]
     })
     this.leadForm.valueChanges.subscribe(

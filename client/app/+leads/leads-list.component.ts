@@ -27,7 +27,7 @@ export class LeadsListComponent implements OnInit {
     this.leadsService.getLeads()
       .subscribe(
         leads => {
-          this.leads = leads
+          this.leads = leads.map((lead) => new Lead(lead))
           this.loading = false
           const now = new Date()
           this.lastUpdate = now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() + " a las " + now.getHours() + ":" + now.getMinutes()
@@ -36,7 +36,7 @@ export class LeadsListComponent implements OnInit {
       )
   }
 
-  openCreateLeadModal() {
+  openCreateLeadModal(): void {
     this.modalService.create(LeadsModule, LeadNewComponent, {
       ok: (lead: Lead) => {
         this.router.navigate(["/leads", lead._id])

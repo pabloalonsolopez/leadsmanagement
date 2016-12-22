@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms"
 import { ReactiveFormsModule } from "@angular/forms"
 import { HttpModule } from "@angular/http"
 
+import { PhonePipe } from "../shared/pipes/phone.pipe"
 import { ConfirmModalComponent } from "../shared/confirm-modal/confirm-modal.component"
 import { IconComponent } from "./icon/icon.component"
 
@@ -12,6 +13,7 @@ import { IconComponent } from "./icon/icon.component"
     CommonModule
   ],
   declarations: [
+    PhonePipe,
     ConfirmModalComponent,
     IconComponent
   ],
@@ -20,6 +22,7 @@ import { IconComponent } from "./icon/icon.component"
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    PhonePipe,
     ConfirmModalComponent,
     IconComponent
   ]

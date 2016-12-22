@@ -10,6 +10,8 @@ import { LeadEditComponent } from "./lead-edit.component"
 
 import { Lead } from "./lead.model"
 import { LeadsService } from "./leads.service"
+import { Activity } from "../activities/activity.model"
+import { ActivitiesService } from "../activities/activities.service"
 
 @Component({
   selector: "lm-lead-detail",
@@ -21,15 +23,23 @@ export class LeadDetailComponent implements OnInit {
   lead: Lead
   error: any
 
-  constructor(private route: ActivatedRoute, private router: Router, private modalService: ModalService, private leadsService: LeadsService, private domSanitizer: DomSanitizer) {}
+  constructor(private route: ActivatedRoute, private router: Router, private modalService: ModalService, private leadsService: LeadsService, private activitiesService: ActivitiesService, private domSanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(
       (params: Params) => {
-        this.leadsService.getLead(params["id"]).subscribe(
-          lead => this.lead = lead,
-          error => this.error = error
-        )
+        this.leadsService.getLead(params["id"])
+          .subscribe(
+            lead => {
+              this.lead = lead
+              this.activitiesService.getActivities(this.lead._id)
+                .subscribe(
+                  activities => this.lead.activities = activities.map((activity) => new Activity(activity)),
+                  error => this.error = error
+                )
+            },
+            error => this.error = error
+          )
       }
     )
   }

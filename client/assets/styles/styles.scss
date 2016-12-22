@@ -73,6 +73,7 @@ iframe {
 }
 
 textarea {
+  vertical-align: top;
   min-height: 72px;
   resize: vertical;
 }
@@ -99,20 +100,48 @@ textarea {
   padding-bottom: 5px;
 }
 
-.button {
+%button {
   display: inline-block;
-  border: 1px solid map-get($colors, geyser);
+  border-width: 1px;
+  border-style: solid;
   border-radius: 4px;
   padding: 0 20px;
-  background-color: map-get($colors, white);
   line-height: 31px;
   font-family: inherit;
   font-size: 1.3rem;
-  color: map-get($colors, science-blue);
   transition: all .15s ease-in;
   cursor: pointer;
+  outline: 0;
+  &[disabled] {
+    border-color: map-get($colors, geyser);
+    background-color: map-get($colors, white);
+    color: map-get($colors, geyser);
+    cursor: default;
+    &:hover {
+      border-color: map-get($colors, geyser);
+      background-color: map-get($colors, white);
+    }
+  }
+}
+
+.button {
+  @extend %button;
+  border-color: map-get($colors, geyser);
+  background-color: map-get($colors, white);
+  color: map-get($colors, science-blue);
   &:hover {
     background-color: map-get($colors, catskill-white);
     color: map-get($colors, endeavour);
+  }
+}
+
+.button-primary {
+  @extend %button;
+  border-color: map-get($colors, science-blue);
+  background-color: map-get($colors, science-blue);
+  color: map-get($colors, white);
+  &:hover {
+    border-color: map-get($colors, endeavour);
+    background-color: map-get($colors, endeavour);
   }
 }

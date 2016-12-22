@@ -112,14 +112,9 @@
       <input class="form-control" type="text" id="preferredContactMethod" placeholder="Preferencia Método de Contacto" formControlName="preferredContactMethod"/>
       <p class="pt(5px) fw(600) fs(1.2rem) c(red)" *ngIf="formErrors.preferredContactMethod">{{formErrors.preferredContactMethod}}</p>
     </div>
-    <div class="w(100%) p(10px)">
-      <label class="label" for="comments">Comentarios</label>
-      <input class="form-control" type="text" id="comments" placeholder="Comentarios" formControlName="comments"/>
-      <p class="pt(5px) fw(600) fs(1.2rem) c(red)" *ngIf="formErrors.comments">{{formErrors.comments}}</p>
-    </div>
   </div>
   <div class="d(flex) bt(1) bc(geyser) bbra(4px) bg(catskill-white) p(20px)">
-    <input class="button" type="submit" value="{{submitButtonText}}" [disabled]="!leadForm.valid"/>
+    <input class="button-primary" type="submit" value="{{submitButtonText}}" [disabled]="!leadForm.valid"/>
     <a class="ml(10px) button" (click)="onCancel.emit()">Cancelar</a>
   </div>
 </form>

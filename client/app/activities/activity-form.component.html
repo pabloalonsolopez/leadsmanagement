@@ -1,0 +1,22 @@
+<form autocomplete="off" [formGroup]="activityForm" (ngSubmit)="onSubmit.emit(activityForm.value)">
+  <input type="hidden" id="_id" formControlName="_id"/>
+  <input type="hidden" id="lead" formControlName="lead"/>
+  <div class="p(10px)">
+    <div class="d(flex) flexw(wrap) b(1) bc(geyser) bra(4px) p(10px)">
+      <div class="w(100%) p(10px)">
+        <label class="label" for="subject">Asunto</label>
+        <input class="form-control" type="text" id="subject" placeholder="Asunto" formControlName="subject"/>
+        <p class="pt(5px) fw(600) fs(1.2rem) c(red)" *ngIf="formErrors.subject">{{formErrors.subject}}</p>
+      </div>
+      <div class="w(100%) p(10px)">
+        <label class="label" for="comments">Comentarios</label>
+        <textarea class="form-control" type="text" id="comments" placeholder="Comentarios" formControlName="comments"></textarea>
+        <p class="pt(5px) fw(600) fs(1.2rem) c(red)" *ngIf="formErrors.comments">{{formErrors.comments}}</p>
+      </div>
+      <div class="w(100%) p(10px) ta(right)">
+          <input class="button-primary" type="submit" value="{{submitButtonText}}" [disabled]="!activityForm.valid"/>
+          <a class="ml(10px) button" (click)="onCancel.emit()">Cancelar</a>
+      </div>
+    </div>
+  </div>
+</form>
